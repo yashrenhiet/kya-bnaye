@@ -1,0 +1,19 @@
+name: kya_core
+description: >
+  Pure-Dart domain, recommendation engine and business rules for kya-bnaye.
+  Zero Flutter imports by design — see AGENTS.md section 5.3 (dependency rule).
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.9.0
+
+resolution: workspace
+
+dependencies:
+  collection: any
+  meta: any
+
+dev_dependencies:
+  test: any
+  very_good_analysis: any

@@ -1,0 +1,20 @@
+node_modules/
+venv/
+.venv/
+.env
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Dart/Flutter — pub workspace resolves from the repo root, so every
+# member (and the root) gets its own generated .dart_tool/. The single
+# root pubspec.lock IS committed on purpose: this is an application
+# (app/), and applications pin their lockfile for reproducible builds —
+# see docs/adr/004-pure-dart-core.md for the workspace layout.
+.dart_tool/
+.packages
+
+# Local coverage output (tool/check.sh).
+coverage/

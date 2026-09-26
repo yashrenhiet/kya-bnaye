@@ -1,0 +1,13 @@
+name: kya_bnaye_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.9.0
+
+# Dart pub workspace: `dart pub get` / `flutter pub get` run from this root
+# resolves both members below in one shot. Each member's own pubspec.yaml
+# has `resolution: workspace` to opt in. See:
+# https://dart.dev/tools/pub/workspaces
+workspace:
+  - packages/kya_core
+  - app

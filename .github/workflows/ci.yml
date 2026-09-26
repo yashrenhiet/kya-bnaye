@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Cancel superseded runs on the same branch/PR instead of queueing them.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Pinned to the version verified on the dev machine (AGENTS.md section 9).
+  # Bump deliberately, in its own PR, not incidentally alongside a feature.
+  FLUTTER_VERSION: "3.47.5"
+
+jobs:
+  analyze-test-android:
+    name: Analyze, test, build Android (debug)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      # Pub workspace: one `pub get` at the repo root resolves both
+      # `packages/kya_core` and `app` in a single lockfile.
+      - name: Resolve workspace dependencies
+        run: flutter pub get
+
+      - name: Format check (whole workspace)
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze kya_core (zero warnings)
+        working-directory: packages/kya_core
+        run: dart analyze --fatal-infos --fatal-warnings
+
+      - name: Test kya_core
+        working-directory: packages/kya_core
+        run: dart test
+
+      - name: Analyze app (zero warnings)
+        working-directory: app
+        run: flutter analyze --fatal-infos --fatal-warnings
+
+      - name: Test app
+        working-directory: app
+        run: flutter test
+
+      - name: Build Android debug APK
+        working-directory: app
+        run: flutter build apk --debug
+
+  ios-build:
+    name: Build iOS (debug, unsigned)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Resolve workspace dependencies
+        run: flutter pub get
+
+      - name: Build iOS debug (no codesign)
+        working-directory: app
+        run: flutter build ios --debug --no-codesign
