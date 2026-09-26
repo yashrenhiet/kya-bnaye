@@ -4,9 +4,11 @@
 > Read this file first. Deep-dive docs are linked at the bottom and in `docs/`, but this file
 > should be enough on its own to know what we're building, why, and how.
 
-**Status as of 2026-09-26: M0 scaffolding staged, not yet committed. It needs lint fixes;
-see §9.1. The M1 core (`packages/kya_core/lib/src/`) is drafted but untracked and has
-almost no tests: coverage is 0.1% against the 90% gate.**
+**Status as of 2026-09-26: M0 scaffolding is staged and passes format, lint and tests
+(`tool/check.sh`, see §9.1). It is waiting for Yasher to commit it. The M1 core (`packages/kya_core/lib/src/`) is drafted but not yet tracked in git.
+It passes lint with 560 tests, 24 golden scenarios and 99.6% line coverage. 15 tests are
+marked `skip: 'BUG: ...'` for known bugs that must be fixed before M1 exits. Find them
+with `grep -rn "skip: 'BUG" packages/kya_core/test`.**
 
 ---
 
