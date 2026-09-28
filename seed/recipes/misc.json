@@ -1,0 +1,81 @@
+{
+  "recipes": [
+    {
+      "id": "gajar_halwa",
+      "name": "Gajar Halwa",
+      "mealTypes": ["snack", "dinner"],
+      "minutes": 60,
+      "base": "none",
+      "tags": {"region": "punjabi", "dishType": "sweet", "flavours": ["sweet"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "carrot", "quantityText": "6 medium"},
+        {"ingredientId": "milk", "quantityText": "3 cups"},
+        {"ingredientId": "sugar", "quantityText": "1/2 cup"},
+        {"ingredientId": "ghee", "quantityText": "3 tbsp"},
+        {"ingredientId": "green_cardamom", "quantityText": "4 pods"},
+        {"ingredientId": "khoya", "quantityText": "1/2 cup", "isOptional": true},
+        {"ingredientId": "cashews", "quantityText": "10", "isOptional": true},
+        {"ingredientId": "almonds", "quantityText": "10", "isOptional": true},
+        {"ingredientId": "raisins", "quantityText": "1 tbsp", "isOptional": true}
+      ],
+      "steps": [
+        "Wash, peel and grate the carrots.",
+        "Cook the grated carrot in the milk in a heavy pan on medium heat, stirring often, until nearly all the milk has dried up (35 to 40 minutes).",
+        "Add ghee and sugar and keep stirring; the mixture loosens at first, then thickens again as the sugar cooks down.",
+        "Stir in crumbled khoya if using, crushed cardamom, chopped nuts and raisins.",
+        "Serve warm; it keeps in the fridge for 3 to 4 days."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "rice_kheer",
+      "name": "Rice Kheer",
+      "mealTypes": ["snack", "dinner"],
+      "minutes": 50,
+      "base": "none",
+      "tags": {"region": "north", "dishType": "sweet", "flavours": ["sweet", "mild"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "milk", "quantityText": "4 cups"},
+        {"ingredientId": "rice", "quantityText": "1/4 cup"},
+        {"ingredientId": "sugar", "quantityText": "1/3 cup"},
+        {"ingredientId": "green_cardamom", "quantityText": "3 pods"},
+        {"ingredientId": "saffron", "quantityText": "pinch", "isOptional": true},
+        {"ingredientId": "almonds", "quantityText": "8", "isOptional": true},
+        {"ingredientId": "cashews", "quantityText": "8", "isOptional": true},
+        {"ingredientId": "raisins", "quantityText": "1 tbsp", "isOptional": true}
+      ],
+      "steps": [
+        "Wash the rice and soak it for 20 minutes, then drain.",
+        "Bring the milk to a boil in a heavy-bottomed pan, add the rice and simmer on low heat, stirring and scraping the bottom often.",
+        "Cook for 35 to 40 minutes until the rice is very soft and the milk has thickened and reduced.",
+        "Add sugar, crushed cardamom, saffron and chopped nuts, and simmer for 5 more minutes.",
+        "Serve warm or chilled; it thickens further as it cools."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "sooji_halwa",
+      "name": "Sooji Halwa",
+      "mealTypes": ["breakfast", "snack"],
+      "minutes": 20,
+      "base": "none",
+      "tags": {"region": "north", "dishType": "sweet", "flavours": ["sweet"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "sooji", "quantityText": "1/2 cup"},
+        {"ingredientId": "ghee", "quantityText": "1/3 cup"},
+        {"ingredientId": "sugar", "quantityText": "1/2 cup"},
+        {"ingredientId": "green_cardamom", "quantityText": "3 pods"},
+        {"ingredientId": "cashews", "quantityText": "8", "isOptional": true},
+        {"ingredientId": "raisins", "quantityText": "1 tbsp", "isOptional": true}
+      ],
+      "steps": [
+        "Warm about 1 1/2 cups of water with the sugar until it dissolves, and keep it hot.",
+        "In a heavy pan melt the ghee and roast the sooji on low heat, stirring constantly, until golden brown and fragrant (8 to 10 minutes).",
+        "Carefully pour the hot sugar water into the sooji while stirring, as it will splutter.",
+        "Keep stirring until the halwa thickens and leaves the sides of the pan, then add crushed cardamom, cashews and raisins.",
+        "Serve warm as a quick sweet or prasad."
+      ],
+      "imageAsset": null
+    }
+  ]
+}

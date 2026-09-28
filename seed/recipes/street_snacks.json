@@ -1,0 +1,494 @@
+{
+  "recipes": [
+    {
+      "id": "aloo_tikki_chaat",
+      "name": "Aloo Tikki Chaat",
+      "mealTypes": ["snack"],
+      "minutes": 40,
+      "base": "none",
+      "tags": {"region": "street", "dishType": "snack", "flavours": ["spicy", "tangy", "sweet"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "4 medium"},
+        {"ingredientId": "cornflour", "quantityText": "2 tbsp"},
+        {"ingredientId": "curd", "quantityText": "1 cup"},
+        {"ingredientId": "tamarind", "quantityText": "lemon-sized ball"},
+        {"ingredientId": "jaggery", "quantityText": "2 tbsp"},
+        {"ingredientId": "chaat_masala", "quantityText": "1 tsp"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "onion", "quantityText": "1 small"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "for shallow frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "sev", "quantityText": "2 tbsp", "isOptional": true},
+        {"ingredientId": "pomegranate", "quantityText": "2 tbsp arils", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Boil and mash the potatoes, then knead in cornflour, chopped green chilli and salt.",
+        "Shape into flat patties and shallow fry on a tawa until crisp and brown on both sides.",
+        "Simmer tamarind pulp with jaggery, a pinch of chilli powder and salt into a thick sweet chutney.",
+        "Whisk the curd with a little salt until smooth.",
+        "Place two tikkis on a plate, spoon over curd and chutney, then add chopped onion, chaat masala, sev and pomegranate."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "bhel_puri",
+      "name": "Bhel Puri",
+      "mealTypes": ["snack"],
+      "minutes": 15,
+      "base": "none",
+      "tags": {"region": "street", "dishType": "snack", "flavours": ["tangy", "sweet", "spicy"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "puffed_rice", "quantityText": "3 cups"},
+        {"ingredientId": "sev", "quantityText": "1/2 cup"},
+        {"ingredientId": "potato", "quantityText": "1 boiled"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "tamarind", "quantityText": "3 tbsp chutney"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "chaat_masala", "quantityText": "1 tsp"},
+        {"ingredientId": "lemon", "quantityText": "1/2", "isOptional": true},
+        {"ingredientId": "peanuts", "quantityText": "2 tbsp roasted", "isOptional": true},
+        {"ingredientId": "raw_mango", "quantityText": "2 tbsp chopped", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Finely chop the onion, tomato, green chilli and boiled potato.",
+        "In a large bowl, toss the puffed rice with the chopped vegetables and peanuts.",
+        "Add tamarind chutney, chaat masala and a squeeze of lemon, and mix quickly with a light hand.",
+        "Top with sev and coriander and eat straight away before the murmura turns soggy."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "bombay_sandwich",
+      "name": "Bombay Sandwich",
+      "mealTypes": ["breakfast", "snack"],
+      "minutes": 20,
+      "base": "bread",
+      "tags": {"region": "street", "dishType": "snack", "flavours": ["spicy", "tangy", "savoury"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "bread", "quantityText": "8 slices"},
+        {"ingredientId": "butter", "quantityText": "2 tbsp"},
+        {"ingredientId": "potato", "quantityText": "2 boiled"},
+        {"ingredientId": "cucumber", "quantityText": "1"},
+        {"ingredientId": "tomato", "quantityText": "1 large"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "coriander_leaves", "quantityText": "1 cup, for chutney"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "chaat_masala", "quantityText": "1 tsp", "isOptional": true},
+        {"ingredientId": "beetroot", "quantityText": "1 small, boiled", "isOptional": true},
+        {"ingredientId": "cheese_slices", "quantityText": "4", "isOptional": true}
+      ],
+      "steps": [
+        "Blend coriander leaves, green chillies, salt and a few drops of water into a thick green chutney.",
+        "Slice the potato, cucumber, tomato, onion and beetroot into thin rounds.",
+        "Butter the bread slices and spread green chutney on one side of each.",
+        "Layer the vegetables on half the slices, sprinkling chaat masala between layers; add cheese if you like.",
+        "Close with the remaining slices, toast or grill until golden, and cut into triangles."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "chilli_paneer",
+      "name": "Chilli Paneer",
+      "mealTypes": ["dinner", "snack"],
+      "minutes": 30,
+      "base": "none",
+      "tags": {"region": "indoChinese", "dishType": "snack", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "paneer"},
+      "ingredients": [
+        {"ingredientId": "paneer", "quantityText": "250 g"},
+        {"ingredientId": "cornflour", "quantityText": "3 tbsp"},
+        {"ingredientId": "capsicum", "quantityText": "1 large"},
+        {"ingredientId": "onion", "quantityText": "1 large"},
+        {"ingredientId": "garlic", "quantityText": "6 cloves"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "soy_sauce", "quantityText": "1 tbsp"},
+        {"ingredientId": "red_chilli_sauce", "quantityText": "1 tbsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "vinegar", "quantityText": "1 tsp", "isOptional": true},
+        {"ingredientId": "spring_onion", "quantityText": "2 stalks", "isOptional": true}
+      ],
+      "steps": [
+        "Coat the paneer cubes in cornflour and a pinch of salt, then pan fry until the edges crisp up.",
+        "Stir-fry chopped garlic and green chillies in a smoking hot wok for a few seconds.",
+        "Add onion and capsicum petals and toss on high heat so they stay crunchy.",
+        "Pour in soy sauce, chilli sauce and vinegar; add a slurry of 1 tsp cornflour in water if you want a glaze.",
+        "Fold in the paneer, toss to coat and serve with spring onion greens on top."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "chole_bhature",
+      "name": "Chole Bhature",
+      "mealTypes": ["lunch"],
+      "minutes": 90,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "bread", "flavours": ["spicy", "tangy", "savoury"], "heaviness": "heavy", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "kabuli_chana", "quantityText": "1 1/2 cups, soaked overnight"},
+        {"ingredientId": "maida", "quantityText": "2 cups"},
+        {"ingredientId": "curd", "quantityText": "1/4 cup"},
+        {"ingredientId": "baking_soda", "quantityText": "1/4 tsp"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "chole_masala", "quantityText": "2 tbsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "sugar", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "for deep frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "tea", "quantityText": "1 tsp, tied in muslin", "isOptional": true}
+      ],
+      "steps": [
+        "Knead maida with curd, baking soda, sugar, salt and a spoon of oil into a soft dough; rest it covered for 2 hours.",
+        "Pressure cook the soaked chana with salt (and the tea bundle for a dark colour) until very soft.",
+        "Fry the onion until brown, add ginger-garlic paste, tomatoes, chilli powder and chole masala; cook until thick.",
+        "Add the chana with some cooking liquid, mash a few, and simmer 15 minutes until the gravy clings.",
+        "Roll the dough into thick ovals and deep fry in hot oil, pressing gently so they puff up.",
+        "Serve the bhature hot with chole, sliced onion and pickle."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "gobi_manchurian",
+      "name": "Gobi Manchurian",
+      "mealTypes": ["dinner", "snack"],
+      "minutes": 40,
+      "base": "none",
+      "tags": {"region": "indoChinese", "dishType": "snack", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "cauliflower", "quantityText": "1 medium"},
+        {"ingredientId": "maida", "quantityText": "1/4 cup"},
+        {"ingredientId": "cornflour", "quantityText": "1/4 cup"},
+        {"ingredientId": "garlic", "quantityText": "6 cloves"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "soy_sauce", "quantityText": "1 tbsp"},
+        {"ingredientId": "tomato_ketchup", "quantityText": "2 tbsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "for deep frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "spring_onion", "quantityText": "2 stalks", "isOptional": true}
+      ],
+      "steps": [
+        "Blanch the cauliflower florets in salted hot water for 3 minutes and drain well.",
+        "Make a thick batter of maida, cornflour, chilli powder, salt and water; coat the florets.",
+        "Deep fry in batches until crisp and golden.",
+        "In a wok, saute minced garlic, ginger and green chilli, then add soy sauce, ketchup and a splash of water.",
+        "Toss in the fried gobi until coated, and scatter spring onion on top."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "khaman_dhokla",
+      "name": "Khaman Dhokla",
+      "mealTypes": ["breakfast", "snack"],
+      "minutes": 35,
+      "base": "none",
+      "tags": {"region": "gujarati", "dishType": "snack", "flavours": ["savoury", "sweet", "tangy"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "besan", "quantityText": "1 1/2 cups"},
+        {"ingredientId": "lemon", "quantityText": "1"},
+        {"ingredientId": "eno", "quantityText": "1 sachet"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "3"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "sugar", "quantityText": "2 tbsp"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true},
+        {"ingredientId": "sesame_seeds", "quantityText": "1 tsp", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Whisk besan with grated ginger, crushed chilli, turmeric, salt, half the lemon juice, a little sugar and water into a thick batter.",
+        "Heat water in a steamer and grease a round tin.",
+        "Stir Eno into the batter, mix briefly until frothy and pour into the tin at once.",
+        "Steam for 15 minutes, until a knife comes out clean, then cool slightly and cut into squares.",
+        "Temper mustard seeds, curry leaves and slit chillies in oil, add half a cup of water with the remaining sugar and lemon.",
+        "Spoon the tempering over the dhokla and garnish with coriander and sesame."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "masala_maggi",
+      "name": "Masala Maggi",
+      "mealTypes": ["breakfast", "snack"],
+      "minutes": 15,
+      "base": "none",
+      "tags": {"region": "street", "dishType": "snack", "flavours": ["spicy", "savoury"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "instant_noodles", "quantityText": "2 packs"},
+        {"ingredientId": "onion", "quantityText": "1 small"},
+        {"ingredientId": "tomato", "quantityText": "1 small"},
+        {"ingredientId": "capsicum", "quantityText": "1/2"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/4 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/4 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "green_peas", "quantityText": "2 tbsp", "isOptional": true},
+        {"ingredientId": "carrot", "quantityText": "1 small", "isOptional": true},
+        {"ingredientId": "butter", "quantityText": "1 tsp", "isOptional": true}
+      ],
+      "steps": [
+        "Saute the chopped onion and green chilli in oil for a minute.",
+        "Add tomato, capsicum and any other vegetables and cook until just soft.",
+        "Stir in chilli powder, garam masala and the tastemaker, then pour in about 1 1/2 cups of water.",
+        "When it boils, add the noodle cakes and cook 2 to 3 minutes until the water is mostly absorbed.",
+        "Finish with a knob of butter and serve hot."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "masala_pasta",
+      "name": "Masala Pasta",
+      "mealTypes": ["dinner", "snack"],
+      "minutes": 25,
+      "base": "none",
+      "tags": {"region": "continental", "dishType": "onePot", "flavours": ["spicy", "tangy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "pasta", "quantityText": "2 cups"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "3 medium"},
+        {"ingredientId": "capsicum", "quantityText": "1 medium"},
+        {"ingredientId": "garlic", "quantityText": "4 cloves"},
+        {"ingredientId": "tomato_ketchup", "quantityText": "1 tbsp"},
+        {"ingredientId": "oregano", "quantityText": "1 tsp"},
+        {"ingredientId": "chilli_flakes", "quantityText": "1 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/4 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "sweet_corn", "quantityText": "1/4 cup", "isOptional": true},
+        {"ingredientId": "cheese", "quantityText": "2 tbsp grated", "isOptional": true}
+      ],
+      "steps": [
+        "Saute chopped garlic and onion in oil until soft, then add capsicum and corn.",
+        "Add chopped tomatoes, chilli powder, garam masala and salt; cook until the tomatoes turn saucy.",
+        "Add the dry pasta with about 2 1/2 cups of water, cover and cook, stirring now and then, until tender.",
+        "Stir in ketchup, oregano and chilli flakes once most of the liquid is absorbed.",
+        "Top with grated cheese if you like and serve immediately."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "medu_vada",
+      "name": "Medu Vada",
+      "mealTypes": ["breakfast", "snack"],
+      "minutes": 40,
+      "base": "none",
+      "tags": {"region": "south", "dishType": "snack", "flavours": ["savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "urad_dal", "quantityText": "1 cup, soaked 4 hours"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "black_pepper", "quantityText": "1 tsp crushed"},
+        {"ingredientId": "cooking_oil", "quantityText": "for deep frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "rice_flour", "quantityText": "1 tbsp", "isOptional": true},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true}
+      ],
+      "steps": [
+        "Drain the soaked urad dal and grind with as little water as possible into a thick, fluffy batter.",
+        "Beat the batter by hand for a few minutes to trap air, then mix in chopped ginger, chillies, pepper, curry leaves and salt.",
+        "Wet your hands, shape a ball of batter, press a hole in the centre with your thumb.",
+        "Slide it gently into medium-hot oil and fry, turning once, until deep golden and crisp.",
+        "Serve hot with coconut chutney or sambar."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "misal_pav",
+      "name": "Misal Pav",
+      "mealTypes": ["breakfast", "snack"],
+      "minutes": 50,
+      "base": "bread",
+      "tags": {"region": "west", "dishType": "curry", "flavours": ["spicy", "tangy", "savoury"], "heaviness": "heavy", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "moth_beans", "quantityText": "1 cup, sprouted"},
+        {"ingredientId": "pav", "quantityText": "8"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "dry_coconut", "quantityText": "2 tbsp"},
+        {"ingredientId": "sev", "quantityText": "1 cup farsan"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "lemon", "quantityText": "1", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Pressure cook the sprouted moth beans with turmeric and salt for 1 whistle so they hold their shape.",
+        "Roast one onion and the dry coconut until brown, then grind to a paste with a little water.",
+        "Heat plenty of oil, splutter mustard seeds, fry the other onion, ginger-garlic paste and chopped tomato.",
+        "Add chilli powder, garam masala and the coconut paste; fry until the oil floats up red.",
+        "Add the sprouts and 3 cups of water and simmer 10 minutes into a thin, fiery rassa.",
+        "Serve in bowls topped with farsan, onion, coriander and lemon, with toasted pav on the side."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "onion_pakora",
+      "name": "Onion Pakora",
+      "mealTypes": ["snack"],
+      "minutes": 25,
+      "base": "none",
+      "tags": {"region": "north", "dishType": "snack", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "onion", "quantityText": "3 large"},
+        {"ingredientId": "besan", "quantityText": "1 cup"},
+        {"ingredientId": "rice_flour", "quantityText": "2 tbsp"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "carom_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "for deep frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Slice the onions thinly, sprinkle with salt and leave 10 minutes so they release moisture.",
+        "Add besan, rice flour, chopped chillies, ajwain, chilli powder, turmeric and coriander; mix without adding water at first.",
+        "Sprinkle in only enough water to bind the onions into a loose, sticky mix.",
+        "Drop small uneven clumps into hot oil and fry on medium heat until crunchy and brown.",
+        "Drain and serve hot with green chutney and chai."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "pav_bhaji",
+      "name": "Pav Bhaji",
+      "mealTypes": ["dinner", "snack"],
+      "minutes": 45,
+      "base": "bread",
+      "tags": {"region": "street", "dishType": "curry", "flavours": ["spicy", "tangy", "savoury"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "3 medium"},
+        {"ingredientId": "cauliflower", "quantityText": "1 cup florets"},
+        {"ingredientId": "capsicum", "quantityText": "1 medium"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "4 medium"},
+        {"ingredientId": "pav", "quantityText": "8"},
+        {"ingredientId": "butter", "quantityText": "4 tbsp"},
+        {"ingredientId": "pav_bhaji_masala", "quantityText": "2 tbsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "green_peas", "quantityText": "1/2 cup", "isOptional": true},
+        {"ingredientId": "lemon", "quantityText": "1", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Pressure cook the potatoes, cauliflower and peas until very soft, then mash roughly.",
+        "Melt butter in a wide pan and cook the chopped onion and capsicum until soft.",
+        "Add tomatoes, chilli powder and pav bhaji masala and cook until the tomatoes melt completely.",
+        "Add the mashed vegetables with a little water and salt, and keep mashing on the heat until smooth and thick.",
+        "Slit the pav, toast in butter with a pinch of masala, and serve with the bhaji, onion, lemon and coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "samosa",
+      "name": "Samosa",
+      "mealTypes": ["snack"],
+      "minutes": 75,
+      "base": "none",
+      "tags": {"region": "street", "dishType": "snack", "flavours": ["spicy", "savoury"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "maida", "quantityText": "2 cups"},
+        {"ingredientId": "carom_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "potato", "quantityText": "4 medium"},
+        {"ingredientId": "green_peas", "quantityText": "1/2 cup"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "amchur", "quantityText": "1 tsp"},
+        {"ingredientId": "ghee", "quantityText": "4 tbsp"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "for deep frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Rub ghee into maida with ajwain and salt until it looks like breadcrumbs, then knead a stiff dough with cold water; rest 30 minutes.",
+        "Boil and roughly crumble the potatoes.",
+        "Fry jeera, grated ginger and chillies in a little oil, add peas, potatoes and all the powdered spices with amchur; cool.",
+        "Roll the dough into ovals, cut in half, fold each half into a cone and fill with the potato mix; seal the edges with water.",
+        "Fry on low heat for 12 to 15 minutes, turning, until blistered and golden all over."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "vada_pav",
+      "name": "Vada Pav",
+      "mealTypes": ["snack"],
+      "minutes": 45,
+      "base": "bread",
+      "tags": {"region": "street", "dishType": "snack", "flavours": ["spicy", "savoury"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "4 medium"},
+        {"ingredientId": "besan", "quantityText": "1 cup"},
+        {"ingredientId": "pav", "quantityText": "6"},
+        {"ingredientId": "garlic", "quantityText": "8 cloves"},
+        {"ingredientId": "green_chilli", "quantityText": "3"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "dry_coconut", "quantityText": "3 tbsp"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "pinch"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "for deep frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true}
+      ],
+      "steps": [
+        "Boil and mash the potatoes. Pound half the garlic with the chillies and ginger into a coarse paste.",
+        "Temper mustard seeds, hing and curry leaves in oil, add the paste, turmeric and potatoes with salt; mix and cool.",
+        "For the dry chutney, toast the coconut and remaining garlic, then pound with chilli powder and salt.",
+        "Make a thick besan batter with salt, a pinch of turmeric and water; shape the potato mix into balls.",
+        "Dip each ball in batter and deep fry until golden.",
+        "Slit the pav, spread the dry chutney inside and tuck in a hot vada."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "veg_hakka_noodles",
+      "name": "Veg Hakka Noodles",
+      "mealTypes": ["dinner", "snack"],
+      "minutes": 25,
+      "base": "none",
+      "tags": {"region": "indoChinese", "dishType": "onePot", "flavours": ["savoury", "spicy"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "hakka_noodles", "quantityText": "200 g"},
+        {"ingredientId": "cabbage", "quantityText": "1 cup shredded"},
+        {"ingredientId": "carrot", "quantityText": "1 medium"},
+        {"ingredientId": "capsicum", "quantityText": "1 medium"},
+        {"ingredientId": "garlic", "quantityText": "5 cloves"},
+        {"ingredientId": "soy_sauce", "quantityText": "1 1/2 tbsp"},
+        {"ingredientId": "vinegar", "quantityText": "1 tsp"},
+        {"ingredientId": "green_chilli_sauce", "quantityText": "1 tbsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "spring_onion", "quantityText": "2 stalks", "isOptional": true}
+      ],
+      "steps": [
+        "Boil the noodles in salted water until just done, drain, rinse under cold water and toss with a few drops of oil.",
+        "Heat a wok until smoking, add oil and fry the chopped garlic for a few seconds.",
+        "Add carrot, capsicum and cabbage cut into thin strips and stir-fry on high heat for 2 minutes.",
+        "Add the noodles with soy sauce, vinegar, chilli sauce and salt, tossing with two spatulas to mix evenly.",
+        "Finish with spring onion greens and serve right away."
+      ],
+      "imageAsset": null
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # ADR 001: Flutter for both Android and iOS
 
-**Status:** Accepted — 2026-09-26
+**Status:** Superseded by [ADR 009](009-native-ios-swift.md) (2026-09-26); originally accepted 2026-09-26
 
 ## Context
 Indian households are overwhelmingly Android (~95% market share), but the primary

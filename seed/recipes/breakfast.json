@@ -1,0 +1,445 @@
+{
+  "recipes": [
+    {
+      "id": "aloo_paratha",
+      "name": "Aloo Paratha",
+      "mealTypes": ["breakfast", "lunch"],
+      "minutes": 40,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "bread", "flavours": ["savoury", "spicy"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "wheat_flour", "quantityText": "2 cups"},
+        {"ingredientId": "potato", "quantityText": "3 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "ginger", "quantityText": "1 inch piece"},
+        {"ingredientId": "amchur", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "ghee", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true},
+        {"ingredientId": "curd", "quantityText": "1 katori", "isOptional": true}
+      ],
+      "steps": [
+        "Knead the atta with a pinch of salt and enough water into a soft dough, then cover and rest it for 15 minutes.",
+        "Boil, peel and mash the potatoes until no lumps remain.",
+        "Mix in chopped green chilli, grated ginger, coriander, salt, chilli powder, garam masala and amchur.",
+        "Roll a small disc of dough, set a ball of filling in the centre, pinch the edges shut and roll it gently into a round.",
+        "Cook on a hot tawa, flipping once, then brush both sides with ghee and press until golden spots appear.",
+        "Serve hot with curd, pickle or a little butter."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "anda_bhurji",
+      "name": "Anda Bhurji",
+      "mealTypes": ["breakfast", "dinner"],
+      "minutes": 15,
+      "base": "bread",
+      "tags": {"region": "north", "dishType": "breakfast", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "egg"},
+      "ingredients": [
+        {"ingredientId": "eggs", "quantityText": "4"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "butter", "quantityText": "1 tbsp"},
+        {"ingredientId": "salt", "quantityText": "1/2 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "pinch"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "pinch"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true},
+        {"ingredientId": "pav", "quantityText": "4", "isOptional": true}
+      ],
+      "steps": [
+        "Melt the butter in a pan and soften the chopped onion and green chilli for 2 to 3 minutes.",
+        "Add chopped tomato, turmeric, chilli powder and salt, and cook until the tomato turns mushy.",
+        "Crack in the eggs and keep stirring on medium heat so they set into soft, moist curds.",
+        "Sprinkle garam masala and coriander, take the pan off the heat while the eggs are still slightly soft, and serve with toasted pav."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "besan_chilla",
+      "name": "Besan Chilla",
+      "mealTypes": ["breakfast"],
+      "minutes": 20,
+      "base": "none",
+      "tags": {"region": "north", "dishType": "breakfast", "flavours": ["savoury", "spicy"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "besan", "quantityText": "1 cup"},
+        {"ingredientId": "onion", "quantityText": "1 small"},
+        {"ingredientId": "tomato", "quantityText": "1 small"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "carom_seeds", "quantityText": "pinch"},
+        {"ingredientId": "salt", "quantityText": "1/2 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "pinch"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/4 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Whisk the besan with salt, turmeric, chilli powder and ajwain, adding water little by little to get a smooth, pourable batter.",
+        "Stir in finely chopped onion, tomato, green chilli and coriander.",
+        "Grease a hot tawa, pour a ladle of batter and spread it thin with the back of the ladle.",
+        "Drizzle oil around the edges, cook until the underside is golden, then flip and cook the other side.",
+        "Serve hot with green chutney or ketchup."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "gobi_paratha",
+      "name": "Gobi Paratha",
+      "mealTypes": ["breakfast", "lunch"],
+      "minutes": 45,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "bread", "flavours": ["savoury", "spicy"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "wheat_flour", "quantityText": "2 cups"},
+        {"ingredientId": "cauliflower", "quantityText": "1 small"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "ginger", "quantityText": "1 inch piece"},
+        {"ingredientId": "carom_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "ghee", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true},
+        {"ingredientId": "curd", "quantityText": "1 katori", "isOptional": true}
+      ],
+      "steps": [
+        "Knead the atta with a pinch of salt and water into a soft dough and keep it covered for 15 minutes.",
+        "Grate the cauliflower finely, sprinkle a little salt, wait 10 minutes and squeeze out the water it releases.",
+        "Mix the gobi with green chilli, ginger, ajwain, coriander, chilli powder and garam masala; add the rest of the salt just before stuffing.",
+        "Stuff a portion into a rolled disc of dough, seal the edges and roll it out carefully.",
+        "Roast on a hot tawa with ghee on both sides until crisp and brown-spotted.",
+        "Serve with curd, pickle or butter."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "idli_sambar",
+      "name": "Idli Sambar",
+      "mealTypes": ["breakfast"],
+      "minutes": 40,
+      "base": "none",
+      "tags": {"region": "south", "dishType": "breakfast", "flavours": ["savoury", "tangy"], "heaviness": "light", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "idli_dosa_batter", "quantityText": "4 cups"},
+        {"ingredientId": "toor_dal", "quantityText": "1/2 katori"},
+        {"ingredientId": "shallots", "quantityText": "8"},
+        {"ingredientId": "drumstick", "quantityText": "1"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "tamarind", "quantityText": "small lemon-sized ball"},
+        {"ingredientId": "sambar_powder", "quantityText": "2 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "pinch"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Grease the idli moulds, fill each with batter and steam for 10 to 12 minutes until a toothpick comes out clean.",
+        "Pressure-cook the toor dal with turmeric until very soft, then mash it well.",
+        "Soak the tamarind in warm water for 10 minutes and squeeze out the pulp.",
+        "Boil the shallots, drumstick pieces and chopped tomato with the tamarind pulp, sambar powder and salt until the vegetables are tender.",
+        "Stir in the mashed dal, thin it with water to a pouring consistency and simmer for 5 minutes.",
+        "Splutter mustard seeds, hing and curry leaves in hot oil, pour over the sambar, add coriander and serve with the idlis."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "masala_dosa",
+      "name": "Masala Dosa",
+      "mealTypes": ["breakfast", "dinner"],
+      "minutes": 40,
+      "base": "none",
+      "tags": {"region": "south", "dishType": "breakfast", "flavours": ["savoury", "spicy"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "idli_dosa_batter", "quantityText": "3 cups"},
+        {"ingredientId": "potato", "quantityText": "3 medium"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "ginger", "quantityText": "1 inch piece"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Boil, peel and roughly crumble the potatoes.",
+        "Heat oil, splutter the mustard seeds, then add curry leaves, green chilli, ginger and sliced onion; cook until the onion is soft.",
+        "Add turmeric, salt and the potatoes with a splash of water, mix well and cook for 3 minutes to make the filling.",
+        "Spread a ladle of batter into a thin circle on a hot greased tawa and drizzle oil around the edge.",
+        "When the dosa is crisp and golden underneath, place a spoonful of potato filling in the middle and fold it over.",
+        "Serve at once with chutney or sambar."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "methi_thepla",
+      "name": "Methi Thepla",
+      "mealTypes": ["breakfast", "snack"],
+      "minutes": 35,
+      "base": "roti",
+      "tags": {"region": "gujarati", "dishType": "bread", "flavours": ["savoury", "spicy"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "wheat_flour", "quantityText": "2 cups"},
+        {"ingredientId": "fenugreek_leaves", "quantityText": "1 cup chopped"},
+        {"ingredientId": "curd", "quantityText": "1/4 cup"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "ginger", "quantityText": "1 inch piece"},
+        {"ingredientId": "sesame_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "3 tbsp"}
+      ],
+      "steps": [
+        "Wash the methi leaves well and chop them finely.",
+        "In a bowl mix atta, methi, curd, grated ginger, chopped green chilli, sesame seeds, turmeric, chilli powder, salt and a tablespoon of oil.",
+        "Knead into a firm but smooth dough using very little water, and rest it for 10 minutes.",
+        "Roll small balls of dough into thin rounds, dusting with atta as needed.",
+        "Cook each thepla on a hot tawa with a little oil on both sides until light brown spots appear.",
+        "Eat warm with pickle or curd, or pack them for travel since they stay soft for a day or two."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "moong_dal_chilla",
+      "name": "Moong Dal Chilla",
+      "mealTypes": ["breakfast"],
+      "minutes": 30,
+      "base": "none",
+      "tags": {"region": "north", "dishType": "breakfast", "flavours": ["savoury", "spicy"], "heaviness": "light", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "moong_dal", "quantityText": "1 cup"},
+        {"ingredientId": "ginger", "quantityText": "1 inch piece"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "onion", "quantityText": "1 small"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "pinch"},
+        {"ingredientId": "salt", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Soak the moong dal for 3 to 4 hours or overnight, then drain.",
+        "Grind it with ginger, green chilli and a little water into a smooth, thick batter, then mix in salt, jeera and hing.",
+        "Stir in finely chopped onion and coriander.",
+        "Spread a ladle of batter thinly on a hot greased tawa, drizzle oil around it and cook until the base turns golden.",
+        "Flip, cook the other side for a minute and serve with green chutney."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "onion_uttapam",
+      "name": "Onion Uttapam",
+      "mealTypes": ["breakfast", "dinner"],
+      "minutes": 25,
+      "base": "none",
+      "tags": {"region": "south", "dishType": "breakfast", "flavours": ["savoury", "spicy"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "idli_dosa_batter", "quantityText": "3 cups"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "ginger", "quantityText": "1/2 inch piece"},
+        {"ingredientId": "salt", "quantityText": "pinch"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Finely chop the onion, green chilli, ginger and coriander and toss them with a pinch of salt.",
+        "Heat a greased tawa, pour a ladle of batter and spread it into a thick round about the size of a small plate.",
+        "Scatter the onion mixture evenly on top and press it lightly into the batter.",
+        "Drizzle oil around the edges, cover and cook on medium heat until the base is golden.",
+        "Flip, cook the topping side for 1 to 2 minutes and serve with coconut chutney or sambar."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "paneer_paratha",
+      "name": "Paneer Paratha",
+      "mealTypes": ["breakfast", "lunch"],
+      "minutes": 40,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "bread", "flavours": ["savoury", "spicy"], "heaviness": "heavy", "protein": "paneer"},
+      "ingredients": [
+        {"ingredientId": "wheat_flour", "quantityText": "2 cups"},
+        {"ingredientId": "paneer", "quantityText": "1 cup grated"},
+        {"ingredientId": "onion", "quantityText": "1 small"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "ginger", "quantityText": "1 inch piece"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "ghee", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Knead the atta with a pinch of salt and water into a soft dough; cover and rest it for 15 minutes.",
+        "Crumble the paneer and mix it with finely chopped onion, green chilli, ginger, coriander, chilli powder, garam masala and salt.",
+        "Roll out a disc of dough, place the filling in the centre, bring the edges together and seal.",
+        "Flatten and roll it gently into a round without letting the filling break through.",
+        "Cook on a hot tawa with ghee on both sides until golden and crisp at the edges.",
+        "Serve hot with curd or pickle."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "poha",
+      "name": "Kanda Poha",
+      "mealTypes": ["breakfast", "snack"],
+      "minutes": 20,
+      "base": "none",
+      "tags": {"region": "west", "dishType": "breakfast", "flavours": ["savoury", "tangy"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "flattened_rice", "quantityText": "2 cups"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "peanuts", "quantityText": "2 tbsp"},
+        {"ingredientId": "lemon", "quantityText": "1/2"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "salt", "quantityText": "1/2 tsp"},
+        {"ingredientId": "sugar", "quantityText": "pinch"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "potato", "quantityText": "1 small", "isOptional": true},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true},
+        {"ingredientId": "sev", "quantityText": "2 tbsp", "isOptional": true}
+      ],
+      "steps": [
+        "Rinse the poha in a strainer under running water for a few seconds, drain and leave it to soften.",
+        "Heat oil and fry the peanuts until crunchy, then lift them out.",
+        "In the same oil splutter mustard seeds, then add curry leaves, green chilli, chopped onion and diced potato; cook until the potato is tender.",
+        "Add turmeric, salt and a pinch of sugar, fold in the poha gently and cook covered on low heat for 2 to 3 minutes.",
+        "Mix in the peanuts and lemon juice, and top with coriander and sev."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "puri_bhaji",
+      "name": "Puri Bhaji",
+      "mealTypes": ["breakfast", "lunch"],
+      "minutes": 45,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "breakfast", "flavours": ["savoury", "spicy"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "wheat_flour", "quantityText": "2 cups"},
+        {"ingredientId": "potato", "quantityText": "4 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "ginger", "quantityText": "1 inch piece"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "for deep frying"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Knead the atta with a little salt, a spoon of oil and water into a stiff dough; rest it for 10 minutes.",
+        "Boil and peel the potatoes, then break them into rough chunks by hand.",
+        "Heat a little oil, add jeera and hing, then ginger, green chilli and chopped tomato; cook until soft.",
+        "Add turmeric, chilli and coriander powders, salt, the potatoes and a cup of water; simmer 8 to 10 minutes until the gravy thickens a little.",
+        "Roll small rounds of dough and deep-fry them one at a time in hot oil, pressing gently so they puff up.",
+        "Serve the hot puris with the aloo bhaji and a sprinkle of coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "sabudana_khichdi",
+      "name": "Sabudana Khichdi",
+      "mealTypes": ["breakfast"],
+      "minutes": 25,
+      "base": "none",
+      "tags": {"region": "west", "dishType": "breakfast", "flavours": ["savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "sabudana", "quantityText": "1 cup"},
+        {"ingredientId": "potato", "quantityText": "1 medium"},
+        {"ingredientId": "peanuts", "quantityText": "1/2 cup"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "lemon", "quantityText": "1/2"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "sugar", "quantityText": "1/2 tsp"},
+        {"ingredientId": "ghee", "quantityText": "2 tbsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Rinse the sabudana two or three times and soak it in just enough water to cover for 5 to 6 hours; drain well so the pearls squash easily.",
+        "Dry-roast the peanuts, rub off the skins and pound them coarsely.",
+        "Toss the peanut powder, salt and sugar through the sabudana.",
+        "Heat ghee, add jeera, curry leaves, green chilli and small potato cubes, and cook covered until the potato is soft.",
+        "Add the sabudana mixture and stir gently on low heat for 5 to 7 minutes until the pearls turn translucent.",
+        "Finish with lemon juice and coriander and serve warm."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "upma",
+      "name": "Rava Upma",
+      "mealTypes": ["breakfast"],
+      "minutes": 20,
+      "base": "none",
+      "tags": {"region": "south", "dishType": "breakfast", "flavours": ["savoury"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "sooji", "quantityText": "1 cup"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "ginger", "quantityText": "1 inch piece"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "ghee", "quantityText": "2 tbsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true},
+        {"ingredientId": "cashews", "quantityText": "8", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Dry-roast the sooji on low heat until it smells nutty but is still pale, then tip it onto a plate.",
+        "Heat ghee, splutter mustard seeds, then add cashews, curry leaves, ginger, green chilli and chopped onion; saute until the onion softens.",
+        "Pour in about 2 1/2 cups of water with the salt and bring it to a rolling boil.",
+        "Lower the heat and add the sooji in a thin stream, stirring all the time so no lumps form.",
+        "Cover and cook for 2 to 3 minutes until the water is absorbed, fluff it up, add coriander and serve hot."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "vegetable_daliya",
+      "name": "Vegetable Daliya",
+      "mealTypes": ["breakfast", "dinner"],
+      "minutes": 30,
+      "base": "none",
+      "tags": {"region": "north", "dishType": "onePot", "flavours": ["savoury"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "broken_wheat", "quantityText": "1 cup"},
+        {"ingredientId": "carrot", "quantityText": "1 small"},
+        {"ingredientId": "green_peas", "quantityText": "1/2 cup"},
+        {"ingredientId": "onion", "quantityText": "1 small"},
+        {"ingredientId": "tomato", "quantityText": "1 small"},
+        {"ingredientId": "ginger", "quantityText": "1/2 inch piece"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "salt", "quantityText": "1 tsp"},
+        {"ingredientId": "ghee", "quantityText": "1 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Dry-roast the daliya with a teaspoon of ghee for 3 to 4 minutes until lightly golden.",
+        "In a pressure cooker heat the remaining ghee, add jeera, then onion, ginger and green chilli, and saute until soft.",
+        "Add chopped tomato, diced carrot and peas with turmeric and salt, and cook for 2 minutes.",
+        "Add the daliya and about 3 cups of water, stir and pressure-cook for 2 whistles.",
+        "Let the pressure drop on its own, loosen the daliya with a spoon and garnish with coriander."
+      ],
+      "imageAsset": null
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 # Recommendation Engine: Kitchen Mode and Craving Mode
 
 > Status: Draft for review · Date: 2026-09-26 · Parent: `docs/PLAN.md` section 4.5
-> Everything in this document lives in the pure-Dart `kya_core` package: no Flutter, no DB.
+> Everything in this document lives in the pure-Swift `KyaCore` package (Foundation only):
+> no SwiftUI, no SwiftData. The Dart original in `legacy/packages/kya_core` is the port's oracle.
 
 ## 1. Two modes, one engine
 
@@ -61,14 +62,16 @@ You have 5 of 7 ingredients.  Missing: paneer, kasuri methi
 The taste model needs tags. Every recipe gets:
 ```
 tags:
-  region:    north | south | east | west | gujarati | punjabi | indo-chinese | continental | street
-  dishType:  dal | curry | dry-sabzi | rice | bread | breakfast | snack | sweet | one-pot
+  region:    north | south | east | west | gujarati | punjabi | indoChinese | continental | street
+  dishType:  dal | curry | drySabzi | rice | bread | breakfast | snack | sweet | onePot
   flavours:  set of { spicy, tangy, sweet, savoury, mild }
   heaviness: light | medium | heavy
-  protein:   paneer | dal-legume | egg | chicken | mutton | fish | veg-only   (tag only; diet filtering is v2)
+  protein:   paneer | dalLegume | egg | chicken | mutton | fish | vegOnly   (tag only; diet filtering is v2)
 image:       bundled asset (webp) or generated placeholder card
 ```
 Tags are **closed enums** validated by the seed-data tests. No free text, so no tag drift.
+Values are spelled as the Swift enum `String` raw values (camelCase, byte-identical to the
+legacy Dart `.name`), the same spelling used in seed and backup JSON (see `docs/design/SEED_GUIDE.md`).
 
 ## 4. Taste profile (derived, not stored)
 
@@ -161,12 +164,12 @@ Chosen from the top positive contributor:
 
 ## 7. Domain additions
 
-```dart
+```swift
 SwipeEvent { id, recipeId, action(right|left|never|undo), mode(kitchen|craving),
              at, deckSeed }
 Recipe     + tags: DishTags, imageAsset?
 // Derived, never persisted:
-TasteProfile { Map<TagKey, double> affinity, Map<TagKey, double> evidence }
+TasteProfile { affinity: [TagKey: Double], evidence: [TagKey: Double] }
 TodaysPicks  = right-swipe events today whose recipe has no MealLog after the swipe
 ```
 Undo is stored as an event (`undo` referencing the previous id), not a delete. The event log
@@ -179,7 +182,7 @@ In v1 the family simply keeps swiping on one phone and decides together.
 - **v2 "Family match"**: members swipe on their own phones, and a match appears when all
   right-swipe. Needs sync, so it ships with household sharing.
 
-## 9. Test plan (kya_core)
+## 9. Test plan (KyaCore)
 - Profile: fold of hand-written event lists gives expected affinities; decay half-life verified.
 - Deck: seed-stable composition (16 exploit + 4 explore), cooldown exclusion, no duplicates.
 - Asymmetry: 5 left swipes on paneer dishes must not push paneer below neutral if there were

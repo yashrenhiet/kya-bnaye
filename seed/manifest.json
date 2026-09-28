@@ -1,0 +1,16 @@
+{
+  "seedVersion": 1,
+  "ingredients": [
+    "ingredients/sabzi_fruit.json",
+    "ingredients/staples_grains_dal_dairy.json",
+    "ingredients/masala_packaged_other.json"
+  ],
+  "recipes": [
+    "recipes/breakfast.json",
+    "recipes/dal_rice.json",
+    "recipes/sabzi.json",
+    "recipes/curry_nonveg.json",
+    "recipes/street_snacks.json",
+    "recipes/misc.json"
+  ]
+}

@@ -1,6 +1,13 @@
 # ADR 004: Pure-Dart `kya_core` package, isolated from Flutter
 
-**Status:** Accepted — 2026-09-26 · **Implemented:** milestone M0 (scaffold), M1 (logic)
+**Status:** Accepted, 2026-09-26 · **Carried over to Swift by [ADR 009](009-native-ios-swift.md)**
+
+> Note (2026-09-26): the principle still holds, and the names change. `kya_core` becomes
+> the SwiftPM package `KyaCore/`, which imports Foundation only (no SwiftUI, SwiftData
+> or UIKit). `app/` becomes `KyaBnaye/`, and its SwiftData adapters in `KyaBnaye/Data/`
+> implement the `KyaCore` protocols. The package boundary enforces the rule: `KyaCore`'s
+> `Package.swift` declares no dependencies. The Dart implementation (now `legacy/`) is
+> the port's oracle. The body below describes the original Dart layout.
 
 ## Context
 The recommendation engine (two ranking strategies, taste-profile derivation, deck

@@ -1,0 +1,625 @@
+{
+  "recipes": [
+    {
+      "id": "bengali_masoor_dal",
+      "name": "Bengali Masoor Dal",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 25,
+      "base": "rice",
+      "tags": {"region": "east", "dishType": "dal", "flavours": ["savoury"], "heaviness": "light", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "masoor_dal", "quantityText": "1 cup"},
+        {"ingredientId": "onion", "quantityText": "1 small"},
+        {"ingredientId": "tomato", "quantityText": "1 small"},
+        {"ingredientId": "green_chilli", "quantityText": "2 slit"},
+        {"ingredientId": "panch_phoron", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "mustard_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Rinse the masoor dal and pressure cook with turmeric and salt for 2 whistles until soft.",
+        "Whisk the cooked dal lightly so it turns smooth but still pourable.",
+        "Heat mustard oil until it smokes lightly, then let it cool a few seconds and add panch phoron.",
+        "When the seeds crackle, add sliced onion and slit green chillies and fry till golden.",
+        "Add chopped tomato and cook until it softens.",
+        "Pour the tempering into the dal, simmer for 3-4 minutes and garnish with coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "bisi_bele_bath",
+      "name": "Bisi Bele Bath",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 50,
+      "base": "rice",
+      "tags": {"region": "south", "dishType": "onePot", "flavours": ["spicy", "tangy", "savoury"], "heaviness": "heavy", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "rice", "quantityText": "1 cup"},
+        {"ingredientId": "toor_dal", "quantityText": "1/2 cup"},
+        {"ingredientId": "carrot", "quantityText": "1 medium"},
+        {"ingredientId": "french_beans", "quantityText": "8-10"},
+        {"ingredientId": "green_peas", "quantityText": "1/2 cup"},
+        {"ingredientId": "tamarind", "quantityText": "lemon-sized ball"},
+        {"ingredientId": "sambar_powder", "quantityText": "2 tbsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "ghee", "quantityText": "2 tbsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "8-10 leaves", "isOptional": true},
+        {"ingredientId": "cashews", "quantityText": "10-12", "isOptional": true}
+      ],
+      "steps": [
+        "Wash rice and toor dal together and pressure cook with turmeric and plenty of water until very soft.",
+        "Soak tamarind in warm water for 10 minutes and squeeze out the pulp.",
+        "Boil chopped carrot, beans and peas in the tamarind water with salt until tender.",
+        "Stir in sambar powder and let it bubble for 3 minutes.",
+        "Add the mashed rice-dal mix and simmer, stirring, until it becomes a thick porridge-like mass.",
+        "Heat ghee, fry cashews, then add mustard seeds, hing and curry leaves.",
+        "Pour the tempering on top and serve hot; it thickens as it cools, so loosen with hot water if needed."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "chana_dal_lauki",
+      "name": "Chana Dal Lauki",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 40,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "dal", "flavours": ["savoury", "spicy"], "heaviness": "medium", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "chana_dal", "quantityText": "3/4 cup"},
+        {"ingredientId": "bottle_gourd", "quantityText": "250 g"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Soak chana dal for 30 minutes and peel and cube the lauki.",
+        "Heat oil, add jeera, then onion and fry until light brown.",
+        "Add grated ginger, green chilli and tomato and cook until soft and oily.",
+        "Add turmeric, chilli powder and salt, then the dal and lauki.",
+        "Add water and pressure cook for 3-4 whistles until the dal is soft but holds shape.",
+        "Stir in garam masala, simmer for 2 minutes and finish with coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "chole_masala",
+      "name": "Chole Masala",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 60,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "curry", "flavours": ["spicy", "tangy", "savoury"], "heaviness": "heavy", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "kabuli_chana", "quantityText": "1 cup, soaked overnight"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "chole_masala", "quantityText": "2 tsp"},
+        {"ingredientId": "bay_leaf", "quantityText": "1"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "amchur", "quantityText": "1/2 tsp", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Pressure cook the soaked chickpeas with salt for 5-6 whistles until they mash easily.",
+        "Heat oil with the bay leaf and fry finely chopped onion until deep brown.",
+        "Add ginger-garlic paste and green chillies and saute for a minute.",
+        "Add pureed tomato, turmeric, chilli powder and chole masala; cook until oil separates.",
+        "Add the chickpeas with their cooking liquid and mash a few against the pan to thicken.",
+        "Simmer for 15 minutes, add amchur if you like it tangier, and top with coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "curd_rice",
+      "name": "Curd Rice",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 20,
+      "base": "rice",
+      "tags": {"region": "south", "dishType": "rice", "flavours": ["mild", "savoury"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "rice", "quantityText": "1 cup"},
+        {"ingredientId": "curd", "quantityText": "1 1/2 cups"},
+        {"ingredientId": "milk", "quantityText": "1/4 cup"},
+        {"ingredientId": "urad_dal", "quantityText": "1 tsp"},
+        {"ingredientId": "ginger", "quantityText": "1/2 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "8-10 leaves", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true},
+        {"ingredientId": "pomegranate", "quantityText": "2 tbsp seeds", "isOptional": true}
+      ],
+      "steps": [
+        "Cook the rice until very soft and mash it slightly while warm.",
+        "Let the rice cool, then mix in curd, milk and salt until creamy.",
+        "Heat oil, add mustard seeds and urad dal and fry until the dal turns golden.",
+        "Add chopped ginger, green chilli and curry leaves, then pour over the rice.",
+        "Mix well, top with coriander and pomegranate, and serve at room temperature."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "dal_makhani",
+      "name": "Dal Makhani",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 90,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "dal", "flavours": ["savoury"], "heaviness": "heavy", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "whole_urad", "quantityText": "3/4 cup, soaked overnight"},
+        {"ingredientId": "rajma", "quantityText": "2 tbsp, soaked overnight"},
+        {"ingredientId": "butter", "quantityText": "2 tbsp"},
+        {"ingredientId": "fresh_cream", "quantityText": "3 tbsp"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "kasuri_methi", "quantityText": "1 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"}
+      ],
+      "steps": [
+        "Pressure cook the soaked urad and rajma with salt for 8-10 whistles until completely soft.",
+        "Melt butter, fry chopped onion until golden, then add ginger-garlic paste.",
+        "Add pureed tomato and chilli powder and cook until the masala thickens and leaves the sides.",
+        "Add the cooked dal, mash some of it, and simmer on low for 30-40 minutes, stirring often.",
+        "Stir in crushed kasuri methi, garam masala and cream, then simmer 5 more minutes."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "dal_tadka",
+      "name": "Dal Tadka",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "rice",
+      "tags": {"region": "north", "dishType": "dal", "flavours": ["savoury", "spicy"], "heaviness": "light", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "toor_dal", "quantityText": "1 cup"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "garlic", "quantityText": "4 cloves"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "dry_red_chilli", "quantityText": "2"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "ghee", "quantityText": "1 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Pressure cook toor dal with turmeric and salt for 3 whistles and whisk until smooth.",
+        "Heat half the ghee, fry onion, green chilli and tomato until soft, then add to the dal and simmer.",
+        "For the tadka, heat the remaining ghee and add jeera, hing, dry red chillies and sliced garlic.",
+        "Once the garlic turns golden, take it off the heat and stir in chilli powder.",
+        "Pour the sizzling tadka over the dal and garnish with coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "gujarati_dal",
+      "name": "Gujarati Dal",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "rice",
+      "tags": {"region": "gujarati", "dishType": "dal", "flavours": ["sweet", "tangy"], "heaviness": "light", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "toor_dal", "quantityText": "3/4 cup"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "ginger", "quantityText": "1/2 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "jaggery", "quantityText": "1 tbsp"},
+        {"ingredientId": "lemon", "quantityText": "1/2"},
+        {"ingredientId": "dry_red_chilli", "quantityText": "1"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "ghee", "quantityText": "1 tbsp"},
+        {"ingredientId": "peanuts", "quantityText": "2 tbsp", "isOptional": true},
+        {"ingredientId": "curry_leaves", "quantityText": "8-10 leaves", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Pressure cook toor dal (and peanuts, if using) with turmeric until soft, then blend until silky.",
+        "Thin the dal with water to a pourable consistency and bring it to a boil.",
+        "Add chopped tomato, grated ginger, green chilli, jaggery and salt and simmer for 10 minutes.",
+        "Heat ghee, add mustard seeds, jeera, hing, dry red chilli and curry leaves, and pour into the dal.",
+        "Squeeze in lemon juice off the heat, adjust sweet-sour balance and top with coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "jeera_rice",
+      "name": "Jeera Rice",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 25,
+      "base": "rice",
+      "tags": {"region": "north", "dishType": "rice", "flavours": ["savoury", "mild"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "basmati_rice", "quantityText": "1 cup"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "bay_leaf", "quantityText": "1"},
+        {"ingredientId": "ghee", "quantityText": "1 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Rinse the basmati and soak it for 20 minutes, then drain.",
+        "Heat ghee, add the bay leaf and jeera and let the seeds sizzle until fragrant.",
+        "Add the rice and stir gently for a minute so every grain is coated.",
+        "Add 2 cups of hot water and salt, cover and cook on low until the water is absorbed.",
+        "Rest for 5 minutes, fluff with a fork and garnish with coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "kadhi_pakora",
+      "name": "Kadhi Pakora",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 50,
+      "base": "rice",
+      "tags": {"region": "punjabi", "dishType": "curry", "flavours": ["tangy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "curd", "quantityText": "1 1/2 cups, slightly sour"},
+        {"ingredientId": "besan", "quantityText": "3/4 cup"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "ginger", "quantityText": "1/2 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "fenugreek_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "dry_red_chilli", "quantityText": "2"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "for frying"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Make a thick batter with half the besan, sliced onion, green chilli, chilli powder and salt.",
+        "Drop spoonfuls into hot oil and fry the pakoras until golden; drain and keep aside.",
+        "Whisk the curd with the remaining besan, turmeric and 3 cups of water until lump-free.",
+        "Heat a little oil, add methi dana, jeera, dry red chillies and grated ginger, then pour in the curd mix.",
+        "Keep stirring until it boils, then simmer on low for 20-25 minutes until it thickens.",
+        "Add salt and the pakoras, simmer 5 minutes more and finish with coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "lemon_rice",
+      "name": "Lemon Rice",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 20,
+      "base": "rice",
+      "tags": {"region": "south", "dishType": "rice", "flavours": ["tangy", "savoury"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "rice", "quantityText": "1 cup, cooked and cooled"},
+        {"ingredientId": "lemon", "quantityText": "1 large"},
+        {"ingredientId": "peanuts", "quantityText": "2 tbsp"},
+        {"ingredientId": "chana_dal", "quantityText": "1 tsp"},
+        {"ingredientId": "urad_dal", "quantityText": "1 tsp"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "8-10 leaves", "isOptional": true}
+      ],
+      "steps": [
+        "Spread the cooked rice on a plate so the grains stay separate.",
+        "Heat oil and fry the peanuts until crunchy, then add mustard seeds, chana dal and urad dal.",
+        "When the dals turn golden, add slit green chillies, curry leaves, hing and turmeric.",
+        "Tip in the rice with salt and toss gently on low heat for 2 minutes.",
+        "Switch off the heat, squeeze in lemon juice and mix well before serving."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "masale_bhat",
+      "name": "Masale Bhat",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 45,
+      "base": "rice",
+      "tags": {"region": "west", "dishType": "rice", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "rice", "quantityText": "1 cup"},
+        {"ingredientId": "brinjal", "quantityText": "2 small"},
+        {"ingredientId": "ivy_gourd", "quantityText": "6-8"},
+        {"ingredientId": "dry_coconut", "quantityText": "2 tbsp, grated"},
+        {"ingredientId": "jaggery", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "cashews", "quantityText": "8-10", "isOptional": true},
+        {"ingredientId": "curry_leaves", "quantityText": "8-10 leaves", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Wash and soak the rice for 15 minutes; cut the brinjal and tondli into long pieces.",
+        "Heat oil, add mustard seeds, hing and curry leaves, then the cashews if using.",
+        "Add the vegetables with turmeric and saute for 3-4 minutes.",
+        "Stir in the rice, chilli powder, garam masala, dry coconut, jaggery and salt.",
+        "Add 2 cups of hot water, cover and cook on low until the rice is done.",
+        "Rest for a few minutes and serve topped with coriander and a spoon of ghee if you like."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "moong_dal_khichdi",
+      "name": "Moong Dal Khichdi",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "rice",
+      "tags": {"region": "north", "dishType": "onePot", "flavours": ["mild", "savoury"], "heaviness": "light", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "rice", "quantityText": "1/2 cup"},
+        {"ingredientId": "moong_dal", "quantityText": "1/2 cup"},
+        {"ingredientId": "ginger", "quantityText": "1/2 inch"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "ghee", "quantityText": "1 tbsp"}
+      ],
+      "steps": [
+        "Rinse rice and moong dal together two or three times.",
+        "Heat ghee in a pressure cooker, add jeera, hing and grated ginger.",
+        "Add the rice-dal, turmeric, salt and about 4 cups of water.",
+        "Pressure cook for 4 whistles, then mash lightly for a soft, porridge-like khichdi.",
+        "Serve hot with an extra spoon of ghee, curd or papad."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "rajma_chawal",
+      "name": "Rajma Chawal",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 60,
+      "base": "rice",
+      "tags": {"region": "punjabi", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "heavy", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "rajma", "quantityText": "1 cup, soaked overnight"},
+        {"ingredientId": "rice", "quantityText": "1 cup"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "bay_leaf", "quantityText": "1"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Pressure cook the soaked rajma with salt for 6-8 whistles until creamy inside.",
+        "Cook the rice separately and keep it warm.",
+        "Heat oil with the bay leaf, fry chopped onion until brown, then add ginger-garlic paste and green chilli.",
+        "Add pureed tomato and the powdered spices and cook until the masala releases oil.",
+        "Add rajma with its liquid, mash a few beans and simmer for 15-20 minutes until thick.",
+        "Finish with garam masala and coriander and serve over the rice."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "rasam",
+      "name": "Rasam",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 25,
+      "base": "rice",
+      "tags": {"region": "south", "dishType": "dal", "flavours": ["tangy", "spicy"], "heaviness": "light", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "toor_dal", "quantityText": "1/4 cup"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "tamarind", "quantityText": "small gooseberry-sized ball"},
+        {"ingredientId": "rasam_powder", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "garlic", "quantityText": "4 cloves"},
+        {"ingredientId": "dry_red_chilli", "quantityText": "1"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "ghee", "quantityText": "1 tsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "8-10 leaves", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Pressure cook toor dal with turmeric until mushy and mash it well.",
+        "Soak tamarind in warm water and extract a thin pulp.",
+        "Boil the tamarind water with chopped tomatoes, crushed garlic, rasam powder and salt for 8 minutes.",
+        "Add the mashed dal and enough water for a thin soup; heat until it just froths, without a rolling boil.",
+        "Temper mustard seeds, jeera, dry red chilli, hing and curry leaves in ghee and add to the rasam.",
+        "Garnish with coriander and serve with rice or sip it hot."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "sambar",
+      "name": "Sambar",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 45,
+      "base": "rice",
+      "tags": {"region": "south", "dishType": "dal", "flavours": ["tangy", "spicy", "savoury"], "heaviness": "medium", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "toor_dal", "quantityText": "3/4 cup"},
+        {"ingredientId": "drumstick", "quantityText": "1, cut in pieces"},
+        {"ingredientId": "shallots", "quantityText": "8-10"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "tamarind", "quantityText": "lemon-sized ball"},
+        {"ingredientId": "sambar_powder", "quantityText": "2 tbsp"},
+        {"ingredientId": "dry_red_chilli", "quantityText": "2"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "brinjal", "quantityText": "1 small", "isOptional": true},
+        {"ingredientId": "curry_leaves", "quantityText": "8-10 leaves", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Pressure cook toor dal with turmeric until soft and mash it smooth.",
+        "Soak tamarind in warm water and squeeze out the pulp.",
+        "Boil drumstick, shallots, tomato and brinjal in the tamarind water with salt until tender.",
+        "Stir in sambar powder and the mashed dal; add water to get a medium-thick consistency.",
+        "Simmer for 10 minutes so the flavours come together.",
+        "Temper mustard seeds, dry red chillies, hing and curry leaves in oil, pour over and add coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "veg_biryani",
+      "name": "Veg Biryani",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 75,
+      "base": "rice",
+      "tags": {"region": "north", "dishType": "rice", "flavours": ["spicy", "savoury"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "basmati_rice", "quantityText": "1 1/2 cups"},
+        {"ingredientId": "carrot", "quantityText": "1 medium"},
+        {"ingredientId": "french_beans", "quantityText": "10-12"},
+        {"ingredientId": "potato", "quantityText": "1 medium"},
+        {"ingredientId": "onion", "quantityText": "2 large"},
+        {"ingredientId": "curd", "quantityText": "1/2 cup"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "biryani_masala", "quantityText": "2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "ghee", "quantityText": "3 tbsp"},
+        {"ingredientId": "green_peas", "quantityText": "1/4 cup", "isOptional": true},
+        {"ingredientId": "mint", "quantityText": "handful", "isOptional": true},
+        {"ingredientId": "saffron", "quantityText": "a few strands in 2 tbsp milk", "isOptional": true}
+      ],
+      "steps": [
+        "Soak the basmati for 30 minutes, then boil in salted water until about 70 percent cooked and drain.",
+        "Slice the onions thinly and fry half of them in ghee until crisp; keep for topping.",
+        "In the same pot, fry the rest of the onion, add ginger-garlic paste and the chopped vegetables.",
+        "Add curd, biryani masala, chilli powder, turmeric and salt and cook until the vegetables are nearly done.",
+        "Layer the par-cooked rice over the vegetables and top with fried onion, mint and saffron milk.",
+        "Cover tightly and cook on the lowest heat for 20 minutes so the rice steams through.",
+        "Rest for 5 minutes and mix gently from the side before serving."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "veg_fried_rice",
+      "name": "Veg Fried Rice",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 25,
+      "base": "rice",
+      "tags": {"region": "indoChinese", "dishType": "rice", "flavours": ["savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "rice", "quantityText": "1 cup, cooked and chilled"},
+        {"ingredientId": "carrot", "quantityText": "1 small"},
+        {"ingredientId": "french_beans", "quantityText": "6-8"},
+        {"ingredientId": "capsicum", "quantityText": "1 small"},
+        {"ingredientId": "spring_onion", "quantityText": "2 stalks"},
+        {"ingredientId": "garlic", "quantityText": "4 cloves"},
+        {"ingredientId": "soy_sauce", "quantityText": "1 tbsp"},
+        {"ingredientId": "black_pepper", "quantityText": "1/2 tsp, crushed"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "vinegar", "quantityText": "1 tsp", "isOptional": true}
+      ],
+      "steps": [
+        "Use rice cooked a few hours ahead so the grains are dry and separate.",
+        "Chop all vegetables finely and keep the spring onion greens aside.",
+        "Heat oil on high, fry minced garlic for a few seconds, then add carrot and beans.",
+        "Add capsicum and spring onion whites and toss for 2 minutes so they stay crunchy.",
+        "Add the rice, soy sauce, pepper, salt and vinegar and toss on high heat for 2-3 minutes.",
+        "Finish with spring onion greens and serve hot."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "veg_pulao",
+      "name": "Veg Pulao",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 40,
+      "base": "rice",
+      "tags": {"region": "north", "dishType": "rice", "flavours": ["savoury", "mild"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "basmati_rice", "quantityText": "1 cup"},
+        {"ingredientId": "carrot", "quantityText": "1 small"},
+        {"ingredientId": "green_peas", "quantityText": "1/2 cup"},
+        {"ingredientId": "french_beans", "quantityText": "8"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "bay_leaf", "quantityText": "1"},
+        {"ingredientId": "cloves", "quantityText": "3"},
+        {"ingredientId": "green_cardamom", "quantityText": "2"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "ghee", "quantityText": "1 1/2 tbsp"},
+        {"ingredientId": "potato", "quantityText": "1 small", "isOptional": true}
+      ],
+      "steps": [
+        "Rinse and soak the rice for 20 minutes; dice the vegetables.",
+        "Heat ghee and add jeera, bay leaf, cloves and cardamom until fragrant.",
+        "Fry sliced onion until light golden, then add the vegetables and saute for 3 minutes.",
+        "Add the drained rice and stir gently, then pour in 2 cups of hot water with salt.",
+        "Cover and cook on low until the water is absorbed and the rice is fluffy.",
+        "Rest for 5 minutes before fluffing and serving with raita."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "yellow_moong_dal",
+      "name": "Yellow Moong Dal",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 25,
+      "base": "rice",
+      "tags": {"region": "north", "dishType": "dal", "flavours": ["mild", "savoury"], "heaviness": "light", "protein": "dalLegume"},
+      "ingredients": [
+        {"ingredientId": "moong_dal", "quantityText": "1 cup"},
+        {"ingredientId": "tomato", "quantityText": "1 small"},
+        {"ingredientId": "ginger", "quantityText": "1/2 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "ghee", "quantityText": "1 tbsp"},
+        {"ingredientId": "lemon", "quantityText": "1/2", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Rinse moong dal and cook with turmeric, salt and water for 2 whistles until soft.",
+        "Whisk the dal and adjust with hot water to the thickness you like.",
+        "Heat ghee, add jeera and hing, then grated ginger, green chilli and chopped tomato.",
+        "Cook the tomato until mushy and pour everything into the dal.",
+        "Simmer for 3 minutes, add a squeeze of lemon and coriander, and serve."
+      ],
+      "imageAsset": null
+    }
+  ]
+}

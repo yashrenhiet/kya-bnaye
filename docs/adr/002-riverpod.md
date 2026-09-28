@@ -1,6 +1,6 @@
 # ADR 002: Riverpod for state management
 
-**Status:** Accepted — 2026-09-26
+**Status:** Superseded by [ADR 009](009-native-ios-swift.md) (2026-09-26); originally accepted 2026-09-26
 
 ## Context
 The app needs a state-management approach that (a) keeps business logic out of widgets,

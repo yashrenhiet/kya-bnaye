@@ -1,0 +1,543 @@
+{
+  "recipes": [
+    {
+      "id": "aloo_matar",
+      "name": "Aloo Matar",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "3 medium"},
+        {"ingredientId": "green_peas", "quantityText": "1 cup"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tsp"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Peel the potatoes and cut them into bite-sized cubes.",
+        "Heat oil in a pressure cooker, splutter the jeera, then soften the chopped onion with the green chilli.",
+        "Stir in ginger-garlic paste, then the chopped tomatoes and all the powdered masalas; cook until oil separates.",
+        "Add potatoes, peas, salt and about 2 cups of water.",
+        "Pressure cook for 2 whistles, mash a few potato pieces to thicken the gravy, and finish with garam masala and coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "avial",
+      "name": "Avial",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 40,
+      "base": "rice",
+      "tags": {"region": "south", "dishType": "curry", "flavours": ["savoury", "mild"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "drumstick", "quantityText": "2"},
+        {"ingredientId": "raw_banana", "quantityText": "1"},
+        {"ingredientId": "carrot", "quantityText": "1 medium"},
+        {"ingredientId": "french_beans", "quantityText": "10"},
+        {"ingredientId": "coconut", "quantityText": "1 cup grated"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "curd", "quantityText": "1/2 cup"},
+        {"ingredientId": "coconut_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true}
+      ],
+      "steps": [
+        "Cut all the vegetables into finger-length batons of similar thickness.",
+        "Cook them with turmeric, salt and a splash of water, covered, until just tender but not mushy.",
+        "Grind the coconut, green chillies and jeera into a coarse paste with very little water.",
+        "Fold the paste into the vegetables and simmer for 3 to 4 minutes.",
+        "Take off the heat, stir in whisked curd, then drizzle coconut oil and tear in curry leaves."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "butter_chicken",
+      "name": "Butter Chicken",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 60,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "curry", "flavours": ["savoury", "sweet", "mild"], "heaviness": "heavy", "protein": "chicken"},
+      "ingredients": [
+        {"ingredientId": "chicken", "quantityText": "500 g boneless"},
+        {"ingredientId": "curd", "quantityText": "1/2 cup"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "kashmiri_chilli_powder", "quantityText": "2 tsp"},
+        {"ingredientId": "tomato", "quantityText": "4 large"},
+        {"ingredientId": "butter", "quantityText": "3 tbsp"},
+        {"ingredientId": "fresh_cream", "quantityText": "1/4 cup"},
+        {"ingredientId": "kasuri_methi", "quantityText": "1 tsp"},
+        {"ingredientId": "cashews", "quantityText": "10", "isOptional": true},
+        {"ingredientId": "garam_masala", "quantityText": "1 tsp"},
+        {"ingredientId": "sugar", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"}
+      ],
+      "steps": [
+        "Marinate the chicken in curd, half the ginger-garlic paste, half the Kashmiri chilli and salt for at least 30 minutes.",
+        "Sear the chicken in a hot pan with oil until charred at the edges; set aside.",
+        "In butter, cook the remaining paste, then the chopped tomatoes (and cashews if using) until very soft; blend smooth.",
+        "Return the sauce to the pan with the rest of the chilli powder, garam masala, sugar and salt; simmer 5 minutes.",
+        "Add the chicken, simmer until cooked through, then stir in cream and crushed kasuri methi."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "chicken_biryani",
+      "name": "Chicken Biryani",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 90,
+      "base": "rice",
+      "tags": {"region": "south", "dishType": "rice", "flavours": ["spicy", "savoury"], "heaviness": "heavy", "protein": "chicken"},
+      "ingredients": [
+        {"ingredientId": "chicken", "quantityText": "500 g, curry cut"},
+        {"ingredientId": "basmati_rice", "quantityText": "2 cups"},
+        {"ingredientId": "curd", "quantityText": "1/2 cup"},
+        {"ingredientId": "onion", "quantityText": "3 large"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "green_chilli", "quantityText": "3"},
+        {"ingredientId": "biryani_masala", "quantityText": "2 tbsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "ghee", "quantityText": "2 tbsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "mint", "quantityText": "handful", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Soak the rice for 30 minutes. Marinate chicken with curd, ginger-garlic paste, chilli powder, turmeric, biryani masala and salt.",
+        "Fry sliced onions in oil until deep golden; keep a handful aside for the top.",
+        "Add the tomato, slit chillies and marinated chicken to the pot and cook until the chicken is nearly done.",
+        "Meanwhile boil the rice in plenty of salted water until about 70% cooked, then drain.",
+        "Spread the rice over the chicken, scatter fried onions, mint, coriander and ghee over it.",
+        "Seal with a tight lid and cook on the lowest heat for 20 minutes; rest 5 minutes before opening."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "chicken_curry",
+      "name": "Chicken Curry",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 50,
+      "base": "rice",
+      "tags": {"region": "north", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "chicken"},
+      "ingredients": [
+        {"ingredientId": "chicken", "quantityText": "500 g, curry cut"},
+        {"ingredientId": "onion", "quantityText": "2 large"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tbsp"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "bay_leaf", "quantityText": "1"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Heat oil with the bay leaf and brown the finely chopped onions slowly; this sets the colour of the gravy.",
+        "Add ginger-garlic paste and chillies, fry a minute, then add tomatoes and the powdered spices.",
+        "Cook the masala until it turns glossy and the oil starts to separate.",
+        "Add the chicken and sear it in the masala for 5 minutes on high heat.",
+        "Pour in a cup of hot water, cover and simmer 20 to 25 minutes until tender; finish with garam masala and coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "chilli_chicken",
+      "name": "Chilli Chicken",
+      "mealTypes": ["dinner", "snack"],
+      "minutes": 35,
+      "base": "none",
+      "tags": {"region": "indoChinese", "dishType": "snack", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "chicken"},
+      "ingredients": [
+        {"ingredientId": "chicken", "quantityText": "400 g boneless"},
+        {"ingredientId": "cornflour", "quantityText": "3 tbsp"},
+        {"ingredientId": "soy_sauce", "quantityText": "2 tbsp"},
+        {"ingredientId": "red_chilli_sauce", "quantityText": "1 tbsp"},
+        {"ingredientId": "capsicum", "quantityText": "1 large"},
+        {"ingredientId": "onion", "quantityText": "1 large"},
+        {"ingredientId": "garlic", "quantityText": "6 cloves"},
+        {"ingredientId": "green_chilli", "quantityText": "3"},
+        {"ingredientId": "cooking_oil", "quantityText": "for shallow frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "spring_onion", "quantityText": "2 stalks", "isOptional": true}
+      ],
+      "steps": [
+        "Toss the chicken cubes with cornflour, half the soy sauce, salt and a splash of water to coat.",
+        "Shallow fry in batches until crisp and golden; drain on paper.",
+        "In a very hot wok, stir-fry chopped garlic and slit chillies, then the onion and capsicum squares for a minute.",
+        "Add the remaining soy sauce and the chilli sauce, then toss the fried chicken through until glazed.",
+        "Serve hot, topped with chopped spring onion greens."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "dum_aloo",
+      "name": "Dum Aloo",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 45,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "12 baby potatoes"},
+        {"ingredientId": "curd", "quantityText": "1/2 cup"},
+        {"ingredientId": "onion", "quantityText": "1 large"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tsp"},
+        {"ingredientId": "kashmiri_chilli_powder", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "kasuri_methi", "quantityText": "1 tsp", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Boil the baby potatoes until just done, peel, prick all over with a fork and fry until the skins turn golden.",
+        "In the same oil, crackle jeera and cook the onion paste until light brown, then the ginger-garlic paste.",
+        "Add tomato puree with turmeric, coriander powder and Kashmiri chilli; cook until thick.",
+        "Lower the heat and stir in beaten curd a spoon at a time so it does not split.",
+        "Add the potatoes and a little water, cover tightly and cook on low for 10 minutes; finish with garam masala."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "egg_curry",
+      "name": "Egg Curry",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 35,
+      "base": "rice",
+      "tags": {"region": "east", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "egg"},
+      "ingredients": [
+        {"ingredientId": "eggs", "quantityText": "4"},
+        {"ingredientId": "potato", "quantityText": "2 medium"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 large"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tsp"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "bay_leaf", "quantityText": "1"},
+        {"ingredientId": "mustard_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "sugar", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"}
+      ],
+      "steps": [
+        "Hard boil the eggs, peel them and make a few shallow slits on each.",
+        "Heat mustard oil until it smokes lightly, then fry the eggs with a pinch of turmeric until blistered; remove.",
+        "Fry halved potatoes in the same oil until golden on the outside; remove.",
+        "Add the bay leaf and onions, cook until brown, then the ginger-garlic paste, tomato, chillies and ground spices.",
+        "Pour in 1 1/2 cups of water with salt and sugar, add potatoes and simmer until soft.",
+        "Slip in the eggs, simmer 5 more minutes and sprinkle garam masala before serving."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "kadai_paneer",
+      "name": "Kadai Paneer",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "paneer"},
+      "ingredients": [
+        {"ingredientId": "paneer", "quantityText": "250 g"},
+        {"ingredientId": "capsicum", "quantityText": "1 large"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "3 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tsp"},
+        {"ingredientId": "dry_red_chilli", "quantityText": "3"},
+        {"ingredientId": "kasuri_methi", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Dry roast the red chillies with the coriander powder for a few seconds and crush coarsely.",
+        "Toss the capsicum and one onion, cut into squares, in a hot kadai with a little oil until slightly charred; set aside.",
+        "Cook the other onion, finely chopped, with ginger-garlic paste, then add pureed tomatoes, turmeric and chilli powder.",
+        "When the masala thickens, stir in the crushed chilli mix and a splash of water.",
+        "Add paneer cubes and the charred vegetables, toss for 2 minutes, then finish with kasuri methi and garam masala."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "macher_jhol",
+      "name": "Macher Jhol",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 40,
+      "base": "rice",
+      "tags": {"region": "east", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "light", "protein": "fish"},
+      "ingredients": [
+        {"ingredientId": "fish", "quantityText": "500 g rohu pieces"},
+        {"ingredientId": "potato", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "3"},
+        {"ingredientId": "panch_phoron", "quantityText": "1/2 tsp"},
+        {"ingredientId": "mustard_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "cumin_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Rub the fish with turmeric and salt and set aside for 10 minutes.",
+        "Fry the fish in smoking mustard oil until lightly crisp on both sides; lift out.",
+        "In the same oil, temper panch phoron, then fry potato wedges until they colour.",
+        "Add grated ginger, chopped tomato, cumin powder, chilli powder and the rest of the turmeric; saute briefly.",
+        "Pour in 2 cups of water with slit chillies and simmer until the potatoes are soft.",
+        "Slide the fish into the thin gravy and simmer gently for 5 minutes without stirring."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "malai_kofta",
+      "name": "Malai Kofta",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 75,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "curry", "flavours": ["savoury", "sweet", "mild"], "heaviness": "heavy", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "3 medium, boiled"},
+        {"ingredientId": "cornflour", "quantityText": "2 tbsp"},
+        {"ingredientId": "cashews", "quantityText": "15"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "3 medium"},
+        {"ingredientId": "fresh_cream", "quantityText": "1/4 cup"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tsp"},
+        {"ingredientId": "raisins", "quantityText": "1 tbsp", "isOptional": true},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "sugar", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "for deep frying"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "kasuri_methi", "quantityText": "1/2 tsp", "isOptional": true}
+      ],
+      "steps": [
+        "Mash the potatoes with cornflour and salt into a smooth dough; chop a few cashews and raisins for the stuffing.",
+        "Shape small balls with a little stuffing tucked inside each and deep fry on medium heat until golden.",
+        "Boil the onions, tomatoes and remaining cashews in a little water for 10 minutes, cool and blend very smooth.",
+        "Cook ginger-garlic paste in a spoon of oil, add the puree, chilli powder, sugar and salt; simmer until glossy.",
+        "Stir in cream and garam masala, then place the koftas in a dish and pour the hot gravy over just before serving."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "matar_paneer",
+      "name": "Matar Paneer",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 35,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "paneer"},
+      "ingredients": [
+        {"ingredientId": "paneer", "quantityText": "200 g"},
+        {"ingredientId": "green_peas", "quantityText": "1 cup"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "3 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tsp"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Blend the onions, tomatoes and green chilli into a coarse paste.",
+        "Crackle jeera in hot oil, add ginger-garlic paste, then the onion-tomato paste.",
+        "Add turmeric, chilli and coriander powders and cook until the masala darkens and releases oil.",
+        "Add the peas with a cup of water and salt; simmer until the peas are soft.",
+        "Drop in the paneer cubes, simmer 3 minutes, and finish with garam masala and coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "mix_veg_curry",
+      "name": "Mix Veg Curry",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 40,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "carrot", "quantityText": "1 medium"},
+        {"ingredientId": "french_beans", "quantityText": "10"},
+        {"ingredientId": "cauliflower", "quantityText": "1 cup florets"},
+        {"ingredientId": "green_peas", "quantityText": "1/2 cup"},
+        {"ingredientId": "potato", "quantityText": "1 medium"},
+        {"ingredientId": "onion", "quantityText": "1 large"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tsp"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Chop all the vegetables into small, even pieces so they cook at the same pace.",
+        "Heat oil, add jeera, then cook the onion until golden and add ginger-garlic paste.",
+        "Add chopped tomatoes and the powdered spices; cook until soft and jammy.",
+        "Tip in the vegetables with salt, stir to coat, then add a cup of water.",
+        "Cover and simmer about 15 minutes until everything is tender; finish with garam masala and coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "mutton_curry",
+      "name": "Mutton Curry",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 90,
+      "base": "rice",
+      "tags": {"region": "north", "dishType": "curry", "flavours": ["spicy", "savoury"], "heaviness": "heavy", "protein": "mutton"},
+      "ingredients": [
+        {"ingredientId": "mutton", "quantityText": "500 g, curry cut"},
+        {"ingredientId": "onion", "quantityText": "3 large"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "curd", "quantityText": "1/4 cup"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 1/2 tbsp"},
+        {"ingredientId": "meat_masala", "quantityText": "2 tsp"},
+        {"ingredientId": "bay_leaf", "quantityText": "2"},
+        {"ingredientId": "black_cardamom", "quantityText": "1"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "4 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Marinate the mutton with curd, half the ginger-garlic paste, turmeric and salt for an hour if time allows.",
+        "Heat oil in a pressure cooker with bay leaves and black cardamom, then brown the sliced onions deeply.",
+        "Add the remaining paste and the tomatoes, then chilli, coriander powder and meat masala; cook until oil separates.",
+        "Add the mutton and bhuno on high heat for 8 to 10 minutes, stirring often.",
+        "Add 2 cups of hot water and pressure cook for 5 to 6 whistles until the meat is tender.",
+        "Open, simmer to the consistency you like and garnish with coriander."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "palak_paneer",
+      "name": "Palak Paneer",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 35,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "curry", "flavours": ["savoury", "mild"], "heaviness": "medium", "protein": "paneer"},
+      "ingredients": [
+        {"ingredientId": "spinach", "quantityText": "2 bunches"},
+        {"ingredientId": "paneer", "quantityText": "200 g"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "garlic", "quantityText": "4 cloves"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "fresh_cream", "quantityText": "2 tbsp", "isOptional": true}
+      ],
+      "steps": [
+        "Blanch the washed spinach in boiling water for 2 minutes, plunge into cold water, then blend with the green chillies.",
+        "Heat oil, add jeera, then the chopped onion, garlic and ginger; cook until soft.",
+        "Add the chopped tomato and cook until it breaks down.",
+        "Pour in the spinach puree with salt and a little water; simmer 3 to 4 minutes, keeping it bright green.",
+        "Add paneer cubes and garam masala, warm through, and swirl in cream if you like."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "paneer_butter_masala",
+      "name": "Paneer Butter Masala",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 40,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "curry", "flavours": ["savoury", "sweet"], "heaviness": "heavy", "protein": "paneer"},
+      "ingredients": [
+        {"ingredientId": "paneer", "quantityText": "250 g"},
+        {"ingredientId": "tomato", "quantityText": "4 large"},
+        {"ingredientId": "cashews", "quantityText": "12"},
+        {"ingredientId": "butter", "quantityText": "2 tbsp"},
+        {"ingredientId": "fresh_cream", "quantityText": "3 tbsp"},
+        {"ingredientId": "ginger_garlic_paste", "quantityText": "1 tsp"},
+        {"ingredientId": "kashmiri_chilli_powder", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "kasuri_methi", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "sugar", "quantityText": "1 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"}
+      ],
+      "steps": [
+        "Simmer the chopped tomatoes and cashews with half a cup of water for 10 minutes, then blend to a silky puree.",
+        "Melt butter with a little oil, fry the ginger-garlic paste for a minute and add Kashmiri chilli powder.",
+        "Pour in the puree, add salt and sugar, and simmer until it thickens and turns deep orange.",
+        "Add the paneer cubes and simmer gently for 3 minutes.",
+        "Stir in cream, garam masala and crushed kasuri methi, then turn off the heat."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "veg_kurma",
+      "name": "Veg Kurma",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 40,
+      "base": "roti",
+      "tags": {"region": "south", "dishType": "curry", "flavours": ["savoury", "mild"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "carrot", "quantityText": "1 medium"},
+        {"ingredientId": "french_beans", "quantityText": "10"},
+        {"ingredientId": "potato", "quantityText": "1 medium"},
+        {"ingredientId": "green_peas", "quantityText": "1/2 cup"},
+        {"ingredientId": "coconut", "quantityText": "1/2 cup grated"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "fennel_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "cashews", "quantityText": "8", "isOptional": true},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "curry_leaves", "quantityText": "1 sprig", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "handful", "isOptional": true}
+      ],
+      "steps": [
+        "Grind the coconut, green chillies, fennel and cashews (if using) into a smooth paste with a little water.",
+        "Heat oil, add curry leaves and the sliced onion, and cook until translucent.",
+        "Add the diced vegetables, turmeric, salt and a cup of water; cover and cook until tender.",
+        "Stir in the coconut paste and garam masala and simmer 5 minutes, adding water for a pourable gravy.",
+        "Garnish with coriander and serve with chapati or parotta."
+      ],
+      "imageAsset": null
+    }
+  ]
+}

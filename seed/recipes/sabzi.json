@@ -1,0 +1,268 @@
+{
+  "recipes": [
+    {
+      "id": "aloo_baingan",
+      "name": "Aloo Baingan",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "drySabzi", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "2 medium"},
+        {"ingredientId": "brinjal", "quantityText": "2 small"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Cut potato and brinjal into similar-sized cubes; keep the brinjal in water so it does not darken.",
+        "Heat oil, add jeera, then chopped onion and green chilli and fry till soft.",
+        "Add the potatoes with turmeric and salt, cover and cook for 5 minutes.",
+        "Add brinjal, tomato and the powdered spices and mix well.",
+        "Cover and cook on low, stirring now and then, until both vegetables are tender.",
+        "Garnish with coriander and serve with roti."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "aloo_gobi",
+      "name": "Aloo Gobi",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "drySabzi", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "2 medium"},
+        {"ingredientId": "cauliflower", "quantityText": "1 small"},
+        {"ingredientId": "onion", "quantityText": "1 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "garam_masala", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Cut cauliflower into florets and potatoes into cubes; rinse and drain well.",
+        "Heat oil, add jeera, then onion, grated ginger and green chilli and fry until golden.",
+        "Add tomato with turmeric, chilli and coriander powder and cook until soft.",
+        "Add potato and cauliflower with salt, toss to coat and cover.",
+        "Cook on low without adding water, stirring gently, until the vegetables are tender and lightly roasted.",
+        "Sprinkle garam masala and coriander before serving."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "aloo_methi",
+      "name": "Aloo Methi",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 25,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "drySabzi", "flavours": ["savoury"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "3 medium"},
+        {"ingredientId": "fenugreek_leaves", "quantityText": "2 bunches"},
+        {"ingredientId": "garlic", "quantityText": "4 cloves"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"}
+      ],
+      "steps": [
+        "Pick the methi leaves, wash thoroughly and chop; dice the potatoes small.",
+        "Heat oil, add jeera, then chopped garlic and green chilli.",
+        "Add potatoes with turmeric, chilli powder and salt, cover and cook until almost done.",
+        "Add the methi and stir-fry uncovered until it wilts and the moisture dries up.",
+        "Cook 2-3 minutes more so the potatoes crisp slightly, then serve."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "aloo_posto",
+      "name": "Aloo Posto",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "rice",
+      "tags": {"region": "east", "dishType": "drySabzi", "flavours": ["mild", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "3 medium"},
+        {"ingredientId": "poppy_seeds", "quantityText": "3 tbsp"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "nigella_seeds", "quantityText": "1/2 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "mustard_oil", "quantityText": "2 tbsp"}
+      ],
+      "steps": [
+        "Soak the poppy seeds in warm water for 20 minutes and grind with one green chilli to a smooth paste.",
+        "Peel and cube the potatoes.",
+        "Heat mustard oil, add kalonji and the other slit green chilli.",
+        "Add potatoes with turmeric and salt, cover and cook on low until tender.",
+        "Stir in the posto paste with a splash of water and cook until it coats the potatoes and turns dry.",
+        "Drizzle a little raw mustard oil on top and serve with rice and dal."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "baingan_bharta",
+      "name": "Baingan Bharta",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 40,
+      "base": "roti",
+      "tags": {"region": "punjabi", "dishType": "drySabzi", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "brinjal", "quantityText": "1 large"},
+        {"ingredientId": "onion", "quantityText": "1 large"},
+        {"ingredientId": "tomato", "quantityText": "2 medium"},
+        {"ingredientId": "garlic", "quantityText": "5 cloves"},
+        {"ingredientId": "ginger", "quantityText": "1 inch"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "green_peas", "quantityText": "1/4 cup", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Rub the brinjal with oil and roast directly on the flame, turning, until the skin is charred all over.",
+        "Cover it for a few minutes, then peel off the skin and mash the flesh.",
+        "Heat oil, fry chopped onion until soft, then add garlic, ginger and green chilli.",
+        "Add chopped tomato, peas if using, chilli and coriander powder and salt; cook until mushy.",
+        "Add the mashed brinjal and cook, stirring, for 5-7 minutes so it soaks up the masala.",
+        "Garnish with coriander and serve with roti."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "beans_poriyal",
+      "name": "Beans Poriyal",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 20,
+      "base": "rice",
+      "tags": {"region": "south", "dishType": "drySabzi", "flavours": ["savoury", "mild"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "french_beans", "quantityText": "250 g"},
+        {"ingredientId": "coconut", "quantityText": "1/4 cup, grated"},
+        {"ingredientId": "urad_dal", "quantityText": "1 tsp"},
+        {"ingredientId": "dry_red_chilli", "quantityText": "2"},
+        {"ingredientId": "mustard_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "asafoetida", "quantityText": "a pinch"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "curry_leaves", "quantityText": "8-10 leaves", "isOptional": true}
+      ],
+      "steps": [
+        "String and finely chop the beans.",
+        "Heat oil, add mustard seeds, urad dal, broken dry red chillies, hing and curry leaves.",
+        "When the dal turns golden, add the beans and salt with a sprinkle of water.",
+        "Cover and cook on low until tender but still bright green.",
+        "Add the grated coconut, toss for a minute and serve with rice and sambar."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "bhindi_masala",
+      "name": "Bhindi Masala",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 30,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "drySabzi", "flavours": ["spicy", "tangy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "okra", "quantityText": "250 g"},
+        {"ingredientId": "onion", "quantityText": "2 medium"},
+        {"ingredientId": "tomato", "quantityText": "1 medium"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "amchur", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "3 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Wash the bhindi and dry it completely before cutting into 1-inch pieces.",
+        "Fry the bhindi in half the oil on medium heat until it is no longer sticky; set aside.",
+        "In the remaining oil, add jeera, then sliced onion and green chilli and fry until golden.",
+        "Add chopped tomato and the powdered spices and cook until soft.",
+        "Return the bhindi, add salt and amchur and toss gently for 3-4 minutes.",
+        "Garnish with coriander and serve."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "cabbage_matar",
+      "name": "Cabbage Matar",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 25,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "drySabzi", "flavours": ["savoury", "mild"], "heaviness": "light", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "cabbage", "quantityText": "1/2 medium"},
+        {"ingredientId": "green_peas", "quantityText": "1/2 cup"},
+        {"ingredientId": "green_chilli", "quantityText": "1"},
+        {"ingredientId": "ginger", "quantityText": "1/2 inch"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/2 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "1 tbsp"},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Shred the cabbage finely.",
+        "Heat oil, add jeera, then grated ginger and chopped green chilli.",
+        "Add the peas with turmeric and saute for 2 minutes.",
+        "Add cabbage, coriander powder and salt and mix well.",
+        "Cook uncovered on medium heat, stirring, until the cabbage is soft but still has some bite.",
+        "Finish with coriander and serve with roti or dal-rice."
+      ],
+      "imageAsset": null
+    },
+    {
+      "id": "jeera_aloo",
+      "name": "Jeera Aloo",
+      "mealTypes": ["lunch", "dinner"],
+      "minutes": 25,
+      "base": "roti",
+      "tags": {"region": "north", "dishType": "drySabzi", "flavours": ["spicy", "savoury"], "heaviness": "medium", "protein": "vegOnly"},
+      "ingredients": [
+        {"ingredientId": "potato", "quantityText": "4 medium, boiled"},
+        {"ingredientId": "green_chilli", "quantityText": "2"},
+        {"ingredientId": "amchur", "quantityText": "1/2 tsp"},
+        {"ingredientId": "cumin_seeds", "quantityText": "1 1/2 tsp"},
+        {"ingredientId": "turmeric", "quantityText": "1/4 tsp"},
+        {"ingredientId": "red_chilli_powder", "quantityText": "1/2 tsp"},
+        {"ingredientId": "coriander_powder", "quantityText": "1 tsp"},
+        {"ingredientId": "salt", "quantityText": "to taste"},
+        {"ingredientId": "cooking_oil", "quantityText": "2 tbsp"},
+        {"ingredientId": "lemon", "quantityText": "1/2", "isOptional": true},
+        {"ingredientId": "coriander_leaves", "quantityText": "small handful", "isOptional": true}
+      ],
+      "steps": [
+        "Peel the boiled potatoes and cut them into bite-sized cubes.",
+        "Heat oil, add a generous amount of jeera and let it turn brown and fragrant.",
+        "Add slit green chillies, turmeric, chilli and coriander powder.",
+        "Add the potatoes and salt and toss on medium heat until the edges crisp up.",
+        "Sprinkle amchur, squeeze lemon if you like, and garnish with coriander."
+      ],
+      "imageAsset": null
+    }
+  ]
+}

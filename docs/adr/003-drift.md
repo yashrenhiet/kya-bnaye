@@ -1,6 +1,6 @@
 # ADR 003: Drift (SQLite) as the local data store
 
-**Status:** Accepted — 2026-09-26 · **Implemented:** milestone M3
+**Status:** Superseded by [ADR 009](009-native-ios-swift.md) (2026-09-26); originally accepted 2026-09-26
 
 ## Context
 The app is offline-first (ADR 006) and needs relational queries: "ingredients expiring

@@ -2,6 +2,8 @@
 
 **Status:** Accepted — 2026-09-26
 
+> Note (2026-09-26): the on-device store is now SwiftData behind KyaCore ports (ADR 009), not Drift.
+
 ## Context
 The core value of the app (pantry tracking, recommendations, shopping list) is entirely
 single-device, single-household data with no inherent need for a server. Several

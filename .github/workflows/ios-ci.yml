@@ -1,0 +1,60 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    name: KyaCore (swift build + test)
+    runs-on: macos-15
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: KyaCore
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain versions
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Build (warnings as errors)
+        run: swift build -Xswiftc -warnings-as-errors
+
+      - name: Test
+        run: swift test
+
+      - name: Test (TZ=America/New_York)
+        run: TZ=America/New_York swift test
+
+  app:
+    name: KyaBnaye app (simulator build)
+    runs-on: macos-15
+    timeout-minutes: 30
+    needs: core
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Toolchain versions
+        run: xcodebuild -version
+
+      # Skipped until the Xcode project exists (created in M0').
+      - name: Build for iOS Simulator
+        if: hashFiles('KyaBnaye/KyaBnaye.xcodeproj/project.pbxproj') != ''
+        run: >
+          xcodebuild
+          -project KyaBnaye/KyaBnaye.xcodeproj
+          -scheme KyaBnaye
+          -destination 'generic/platform=iOS Simulator'
+          build
+          CODE_SIGNING_ALLOWED=NO
