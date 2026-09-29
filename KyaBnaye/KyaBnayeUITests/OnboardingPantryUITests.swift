@@ -75,6 +75,7 @@ final class OnboardingPantryUITests: XCTestCase {
         return element.exists && element.isHittable
     }
 
+    @MainActor
     private func value(of element: XCUIElement) -> String {
         element.value as? String ?? ""
     }

@@ -229,6 +229,7 @@ final class CriticalPathUITests: XCTestCase {
         for _ in 0..<3 { app.swipeDown() }
     }
 
+    @MainActor
     private func value(of element: XCUIElement) -> String {
         element.value as? String ?? ""
     }
