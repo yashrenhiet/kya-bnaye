@@ -23,14 +23,17 @@ extension DeckStore {
     /// The next hour boundary (in `calendar`) at which
     /// ``RankingContext/mealType(forHour:)`` changes: 05:00, 11:00, 16:00 or 19:00, on
     /// `now`'s date or the next one if every boundary today has passed.
+    ///
+    /// Boundaries are wall-clock hours (`bySettingHour`), not hours elapsed since midnight,
+    /// so a 23- or 25-hour DST day still wakes at 05:00 local rather than 06:00 or 04:00.
     static func nextMealSlotChange(after now: Date, calendar: Calendar) -> Date {
         let startOfDay = calendar.startOfDay(for: now)
-        let boundaries = [5, 11, 16, 19].compactMap {
-            calendar.date(byAdding: .hour, value: $0, to: startOfDay)
-        }
-        if let today = boundaries.first(where: { $0 > now }) { return today }
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: startOfDay) ?? startOfDay
-        let tomorrowFiveAM = calendar.date(byAdding: .hour, value: 5, to: tomorrow)
-        return tomorrowFiveAM ?? now.addingTimeInterval(3_600)
+        let boundaries = [startOfDay, tomorrow].flatMap { day in
+            [5, 11, 16, 19].compactMap {
+                calendar.date(bySettingHour: $0, minute: 0, second: 0, of: day)
+            }
+        }
+        return boundaries.first { $0 > now } ?? now.addingTimeInterval(3_600)
     }
 }

@@ -1,43 +1,64 @@
 import SwiftUI
+import UIKit
 
-/// The placeholder photo for a dish until real food photography lands (every seed
-/// `imageAsset` is `nil` in v1): a warm gradient with the dish's initial.
+/// A dish's bundled photo (``KyaCore/Recipe/imageAsset``) once one is seeded, and until then
+/// (or if it fails to load) a warm gradient with the dish's initial.
 ///
 /// The palette is picked deterministically from the recipe id (a stable FNV-1a hash, never
 /// `hashValue`, which is seeded per process), so a dish always looks the same in the recipe
 /// book, the swipe deck and Today's picks. Every colour is a theme token. The artwork is
 /// decorative: it is hidden from VoiceOver because the dish name is always shown next to it.
 struct RecipeArtwork: View {
-    /// The recipe id; decides the palette.
+    /// The recipe id; decides the fallback palette.
     let recipeId: String
-    /// The dish name; its first letter is drawn.
+    /// The dish name; its first letter is drawn in the fallback.
     let name: String
+    /// ``KyaCore/Recipe/imageAsset``: a path under the bundled `seed/` folder, or `nil` to
+    /// always show the fallback (every seed recipe ships with this `nil` in v1).
+    var imageAsset: String? = nil
     /// Corner radius of the artwork.
     var cornerRadius: CGFloat = Radius.large
 
+    @State private var photo: UIImage?
+
     var body: some View {
-        let palette = Self.palette(for: recipeId)
         GeometryReader { proxy in
             let side = min(proxy.size.width, proxy.size.height)
-            ZStack {
-                LinearGradient(
-                    colors: [palette.start.color, palette.end.color],
-                    startPoint: .topLeading, endPoint: .bottomTrailing)
-                Circle()
-                    .fill(ThemeColor.turmeric.color.opacity(0.25))
-                    .frame(width: side * 0.9, height: side * 0.9)
-                    .offset(x: proxy.size.width * 0.3, y: -proxy.size.height * 0.25)
-                // The initial is part of the graphic, so it scales with the frame rather than
-                // with Dynamic Type; the readable dish name is always shown elsewhere.
-                Text(Self.initial(of: name))
-                    .font(.system(size: max(side * 0.45, 1), weight: .bold, design: .serif))
-                    .foregroundStyle(ThemeColor.onAccent.color.opacity(0.92))
-                    .shadow(color: ThemeColor.textPrimary.color.opacity(0.25), radius: side * 0.02)
+            if let photo {
+                Image(uiImage: photo)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: proxy.size.width, height: proxy.size.height)
+                    .clipped()
+            } else {
+                fallback(side: side, proxy: proxy)
             }
-            .frame(width: proxy.size.width, height: proxy.size.height)
         }
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
         .accessibilityHidden(true)
+        // Keyed on the asset, not the recipe id, so a New item sheet reusing this view for a
+        // different dish (or a photo added on a seed update) decodes the right file.
+        .task(id: imageAsset) { photo = await ImageAssetLoader.shared.image(for: imageAsset) }
+    }
+
+    private func fallback(side: CGFloat, proxy: GeometryProxy) -> some View {
+        let palette = Self.palette(for: recipeId)
+        return ZStack {
+            LinearGradient(
+                colors: [palette.start.color, palette.end.color],
+                startPoint: .topLeading, endPoint: .bottomTrailing)
+            Circle()
+                .fill(ThemeColor.turmeric.color.opacity(0.25))
+                .frame(width: side * 0.9, height: side * 0.9)
+                .offset(x: proxy.size.width * 0.3, y: -proxy.size.height * 0.25)
+            // The initial is part of the graphic, so it scales with the frame rather than
+            // with Dynamic Type; the readable dish name is always shown elsewhere.
+            Text(Self.initial(of: name))
+                .font(.system(size: max(side * 0.45, 1), weight: .bold, design: .serif))
+                .foregroundStyle(ThemeColor.onAccent.color.opacity(0.92))
+                .shadow(color: ThemeColor.textPrimary.color.opacity(0.25), radius: side * 0.02)
+        }
+        .frame(width: proxy.size.width, height: proxy.size.height)
     }
 
     /// A gradient pair of theme tokens.

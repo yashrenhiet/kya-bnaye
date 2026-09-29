@@ -53,7 +53,9 @@ struct HistoryStoreTests {
         #expect(inIndia.sections[0].title == "Today")
         #expect(inIndia.sections[1].title.hasSuffix("· 2 days ago"))
         #expect(inIndia.sections[0].entries[0].recipeName == "A deleted recipe")
+        #expect(inIndia.sections[0].entries[0].imageAsset == nil)
         #expect(inIndia.sections[1].entries[0].recipeName == "Jeera Aloo")
+        #expect(inIndia.sections[1].entries[0].imageAsset == "images/jeera_aloo.webp")
 
         let (inUTC, utcTask) = await observed(repositories, now: now, calendar: utc)
         defer { utcTask.cancel() }

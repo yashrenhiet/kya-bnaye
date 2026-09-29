@@ -39,7 +39,7 @@ enum RecipeTestFixtures {
     static let jeeraAloo = Recipe(
         id: "jeera_aloo", name: "Jeera Aloo", mealTypes: [.lunch], minutes: 20, base: .roti,
         ingredients: [line("potato"), line("jeera"), line("salt")], steps: ["Fry.", "Serve."],
-        tags: tags, source: .seed)
+        tags: tags, source: .seed, imageAsset: "images/jeera_aloo.webp")
 
     static let paneerBhurji = Recipe(
         id: "paneer_bhurji", name: "Paneer Bhurji", mealTypes: [.dinner], minutes: 45,

@@ -58,6 +58,7 @@ final class RecipesStore {
     private(set) var pantryById: [String: PantryItem] = [:]
     private(set) var lastCookedByRecipe: [String: Date] = [:]
     @ObservationIgnored private var loaded: Set<Source> = []
+    @ObservationIgnored private let writes = SerialWriteQueue()
 
     @ObservationIgnored private let repositories: RepositorySet
     @ObservationIgnored private let now: () -> Date
@@ -143,11 +144,16 @@ final class RecipesStore {
     }
 
     // MARK: Actions
+    //
+    // Every action runs through ``perform(_:fallback:_:)``, one at a time, so a quick double
+    // tap acts on the state the first tap left (a second favourite tap flips back; a second
+    // "Add missing" sees the items the first one added).
 
     /// Flips a recipe's favourite flag.
     func toggleFavorite(_ recipe: Recipe) async {
-        let target = !(self.recipe(withId: recipe.id)?.isFavorite ?? recipe.isFavorite)
-        await perform(String(localized: "Couldn't update \(recipe.name). Please try again.")) {
+        let failure = String(localized: "Couldn't update \(recipe.name). Please try again.")
+        await perform(failure, fallback: ()) {
+            let target = !(self.recipe(withId: recipe.id)?.isFavorite ?? recipe.isFavorite)
             try await self.repositories.recipes.setFavorite(target, forRecipeWithId: recipe.id)
             self.replace(recipe.id) { $0.copy(isFavorite: target) }
             self.confirmation =
@@ -163,7 +169,8 @@ final class RecipesStore {
     /// so the dish returns to the deck as well as the book. The undo events are appended
     /// first: if clearing the flag then fails, the dish simply stays hidden.
     func setHidden(_ isHidden: Bool, for recipe: Recipe) async {
-        await perform(String(localized: "Couldn't update \(recipe.name). Please try again.")) {
+        let failure = String(localized: "Couldn't update \(recipe.name). Please try again.")
+        await perform(failure, fallback: ()) {
             if !isHidden {
                 let undos = RecipeUnhide.undoEvents(
                     for: recipe.id, in: try await self.repositories.swipeEvents.all(),
@@ -189,14 +196,13 @@ final class RecipesStore {
             await setHidden(true, for: recipe)
             return false
         }
-        var deleted = false
-        await perform(String(localized: "Couldn't delete \(recipe.name). Please try again.")) {
+        let failure = String(localized: "Couldn't delete \(recipe.name). Please try again.")
+        return await perform(failure, fallback: false) {
             try await self.repositories.recipes.delete(id: recipe.id)
             self.recipes.removeAll { $0.id == recipe.id }
             self.confirmation = String(localized: "\(recipe.name) deleted")
-            deleted = true
+            return true
         }
-        return deleted
     }
 
     /// Puts the recipe's missing ingredients on the shopping list (reason "recipe"),
@@ -205,20 +211,19 @@ final class RecipesStore {
     /// - Returns: How many items were added.
     @discardableResult
     func addMissingToShoppingList(_ recipe: Recipe) async -> Int {
-        var added = 0
-        await perform(String(localized: "Couldn't update the shopping list. Please try again.")) {
+        let failure = String(localized: "Couldn't update the shopping list. Please try again.")
+        return await perform(failure, fallback: 0) {
             let items = RecipeShoppingPlan.missingItems(
                 for: recipe, ingredientsById: self.ingredientsById, pantry: self.pantryById,
                 existingItems: try await self.repositories.shopping.all(), now: self.now(),
                 nextId: self.makeId)
             try await self.repositories.shopping.upsert(items)
-            added = items.count
             self.confirmation =
                 items.isEmpty
                 ? String(localized: "Everything missing is already on your list")
                 : String(localized: "Added \(items.count) to your shopping list")
+            return items.count
         }
-        return added
     }
 
     // MARK: Private
@@ -256,11 +261,19 @@ final class RecipesStore {
         if loaded.count == 4, phase != .loaded { phase = .loaded }
     }
 
-    private func perform(_ failure: String, _ action: () async throws -> Void) async {
-        do {
-            try await action()
-        } catch {
-            actionError = failure
+    /// Runs `action` after any action still in flight; on failure shows `failure` and
+    /// returns `fallback`.
+    private func perform<Result: Sendable>(
+        _ failure: String, fallback: Result,
+        _ action: @escaping @MainActor () async throws -> Result
+    ) async -> Result {
+        await writes.run {
+            do {
+                return try await action()
+            } catch {
+                self.actionError = failure
+                return fallback
+            }
         }
     }
 

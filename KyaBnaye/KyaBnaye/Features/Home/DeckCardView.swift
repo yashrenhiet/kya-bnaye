@@ -9,8 +9,10 @@ struct DeckCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.medium) {
-            RecipeArtwork(recipeId: card.recipe.id, name: card.recipe.name)
-                .aspectRatio(3 / 2, contentMode: .fit)
+            RecipeArtwork(
+                recipeId: card.recipe.id, name: card.recipe.name, imageAsset: card.recipe.imageAsset
+            )
+            .aspectRatio(3 / 2, contentMode: .fit)
             Text(card.recipe.name)
                 .font(Typography.display)
                 .foregroundStyle(ThemeColor.textPrimary.color)

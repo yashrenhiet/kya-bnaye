@@ -31,7 +31,9 @@ struct PickSheet: View {
     private var summary: some View {
         HStack(alignment: .top, spacing: Spacing.medium) {
             RecipeArtwork(
-                recipeId: card.recipe.id, name: card.recipe.name, cornerRadius: Radius.medium
+                recipeId: card.recipe.id, name: card.recipe.name,
+                imageAsset: card.recipe.imageAsset,
+                cornerRadius: Radius.medium
             )
             .frame(width: Metrics.minimumTapTarget * 2, height: Metrics.minimumTapTarget * 2)
             VStack(alignment: .leading, spacing: Spacing.xSmall) {

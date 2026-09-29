@@ -75,7 +75,13 @@ final class OnboardingStore {
 
     @ObservationIgnored private var perishables: [Ingredient] = []
     @ObservationIgnored private var normalizer: IngredientNormalizer?
-    @ObservationIgnored private var recordedPickIds: Set<String> = []
+    /// Swipe event id of each pick already recorded, by recipe id.
+    @ObservationIgnored private var recordedPickEvents: [String: String] = [:]
+    /// Perishables the fridge step has written as Plenty.
+    @ObservationIgnored private var fridgeWrittenIds: Set<String> = []
+    /// What those perishables' records were before the fridge step overwrote them (absent =
+    /// no record), so unticking one after going back restores it.
+    @ObservationIgnored private var fridgeOriginals: [String: PantryItem] = [:]
     @ObservationIgnored private let repositories: RepositorySet
     @ObservationIgnored private let now: () -> Date
     @ObservationIgnored private let calendar: () -> Calendar
@@ -191,25 +197,55 @@ final class OnboardingStore {
             }
             try await repositories.pantry.setLevels(items)
         case .fridge:
-            let ticked = perishables.filter { tickedFridgeIds.contains($0.id) }
-            try await repositories.pantry.setLevels(ticked.map(plenty))
+            try await saveFridge()
         case .dishes:
             try await recordPicks()
         }
     }
 
+    /// Writes ticked perishables as Plenty. One written on an earlier pass and now unticked
+    /// (the user went back) gets its pre-onboarding record back, or none if it had none.
+    private func saveFridge() async throws {
+        let ticked = perishables.filter { tickedFridgeIds.contains($0.id) }
+        let newIds = Set(ticked.map(\.id)).subtracting(fridgeWrittenIds)
+        if !newIds.isEmpty {
+            let stored = try await repositories.pantry.all()
+            for item in stored where newIds.contains(item.ingredientId) {
+                fridgeOriginals[item.ingredientId] = item
+            }
+        }
+        let reverted = fridgeWrittenIds.subtracting(tickedFridgeIds)
+        let restored = reverted.compactMap { fridgeOriginals[$0] }
+        try await repositories.pantry.setLevels(ticked.map(plenty) + restored)
+        fridgeWrittenIds.formUnion(newIds)
+        let removed = reverted.filter { fridgeOriginals[$0] == nil }
+        if !removed.isEmpty { try await repositories.pantry.delete(ingredientIds: removed) }
+        fridgeWrittenIds.subtract(reverted)
+    }
+
     /// Records each new pick as a right swipe in Craving mode (`AGENTS.md` M1 decisions).
-    /// Picks already recorded (the user went back and forward) are not recorded twice.
+    /// Picks already recorded (the user went back and forward) are not recorded twice, and
+    /// a recorded pick the user has since unticked is revoked with an undo event (the log is
+    /// append-only, ADR 008).
     private func recordPicks() async throws {
         let newPicks = dishChoices.map(\.id).filter {
-            pickedRecipeIds.contains($0) && !recordedPickIds.contains($0)
+            pickedRecipeIds.contains($0) && recordedPickEvents[$0] == nil
         }
         for recipeId in newPicks {
+            let eventId = makeId()
             try await repositories.swipeEvents.add(
                 SwipeEvent(
-                    id: makeId(), recipeId: recipeId, action: .right, mode: .craving, at: now(),
+                    id: eventId, recipeId: recipeId, action: .right, mode: .craving, at: now(),
                     deckSeed: 0))
-            recordedPickIds.insert(recipeId)
+            recordedPickEvents[recipeId] = eventId
+        }
+        let dropped = recordedPickEvents.filter { !pickedRecipeIds.contains($0.key) }
+        for (recipeId, eventId) in dropped.sorted(by: { $0.key < $1.key }) {
+            try await repositories.swipeEvents.add(
+                SwipeEvent(
+                    id: makeId(), recipeId: recipeId, action: .undo, mode: .craving, at: now(),
+                    deckSeed: 0, undoesEventId: eventId))
+            recordedPickEvents[recipeId] = nil
         }
     }
 

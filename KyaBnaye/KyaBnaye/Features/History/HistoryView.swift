@@ -91,7 +91,8 @@ private struct HistoryRow: View {
     var body: some View {
         HStack(spacing: Spacing.medium) {
             RecipeArtwork(
-                recipeId: entry.recipeId, name: entry.recipeName, cornerRadius: Radius.small
+                recipeId: entry.recipeId, name: entry.recipeName, imageAsset: entry.imageAsset,
+                cornerRadius: Radius.small
             )
             .frame(width: Metrics.minimumTapTarget, height: Metrics.minimumTapTarget)
             VStack(alignment: .leading, spacing: Spacing.xSmall) {

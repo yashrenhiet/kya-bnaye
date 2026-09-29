@@ -119,11 +119,17 @@ final class RecipeEditorStore {
     }
 
     /// Adds typed text that matched nothing as a new (user) ingredient, created in the
-    /// catalog when the recipe is saved.
+    /// catalog when the recipe is saved. If its id already belongs to a catalog ingredient
+    /// ("foo_bar" and an earlier "Foo Bar" both become `user_foo_bar`), that one is used, so
+    /// saving never overwrites it.
     func addNewIngredient(named name: String) {
         do {
             let ingredient = try IngredientNormalizer.createUserIngredient(
                 name, category: .other, buyFrom: .other)
+            if let existing = catalogById[ingredient.id] {
+                addIngredient(existing)
+                return
+            }
             pendingIngredients[ingredient.id] = ingredient
             addIngredient(ingredient)
         } catch {

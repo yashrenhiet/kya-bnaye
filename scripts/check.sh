@@ -8,7 +8,9 @@
 # Usage: scripts/check.sh            (from anywhere)
 #        MIN_COVERAGE=95 scripts/check.sh
 #        APP=1 scripts/check.sh      (also lint, build and test the iOS app; ~5 min)
-#        APP=1 APP_DESTINATION='platform=iOS Simulator,name=iPhone 18 Pro' scripts/check.sh
+#        APP=1 APP_DESTINATION='platform=iOS Simulator,name=iPhone 16' scripts/check.sh
+#        (default: the newest available iPhone simulator; the full xcodebuild log is kept
+#        at build-logs/xcodebuild-app.log)
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -104,7 +106,24 @@ fi
 if [[ "${APP:-0}" == "1" ]]; then
     APP_PROJECT="KyaBnaye/KyaBnaye.xcodeproj"
     APP_SOURCES=(KyaBnaye/KyaBnaye KyaBnaye/KyaBnayeTests KyaBnaye/KyaBnayeUITests)
-    APP_DESTINATION="${APP_DESTINATION:-platform=iOS Simulator,name=iPhone 18 Pro}"
+    if [[ -z "${APP_DESTINATION:-}" ]]; then
+        # Newest iOS runtime first, then device name, so the pick is stable per machine.
+        sim_id="$(xcrun simctl list devices available -j | python3 -c '
+import json, re, sys
+def version(runtime):
+    match = re.search(r"iOS-(\d+)-(\d+)", runtime)
+    return (int(match[1]), int(match[2])) if match else (-1, -1)
+phones = sorted(
+    ((version(runtime), device["name"], device["udid"])
+     for runtime, devices in json.load(sys.stdin)["devices"].items()
+     if "SimRuntime.iOS" in runtime
+     for device in devices if device["name"].startswith("iPhone")),
+    key=lambda phone: (phone[0], phone[1]), reverse=True)
+print(phones[0][2] if phones else "")
+')"
+        [[ -n "$sim_id" ]] || fail "no available iPhone simulator (xcrun simctl list devices)"
+        APP_DESTINATION="platform=iOS Simulator,id=$sim_id"
+    fi
 
     step "App: format lint (swift format, strict)"
     swift format lint --strict --recursive \
@@ -125,14 +144,21 @@ if [[ "${APP:-0}" == "1" ]]; then
     fi
 
     step "App: build and test on $APP_DESTINATION (warnings are errors via project settings)"
-    app_log="$(mktemp)"
-    trap 'rm -f "$test_log" "$app_log"' EXIT
-    xcodebuild -project "$APP_PROJECT" -scheme KyaBnaye -destination "$APP_DESTINATION" \
-        build test CODE_SIGNING_ALLOWED=NO >"$app_log" 2>&1 \
-        || { tail -n 60 "$app_log" >&2; fail "app build or tests failed (log: $app_log)"; }
+    # Kept (not a temp file) so a failure can be read in full afterwards.
+    mkdir -p build-logs
+    app_log="build-logs/xcodebuild-app.log"
+    if ! xcodebuild -project "$APP_PROJECT" -scheme KyaBnaye -destination "$APP_DESTINATION" \
+        build test CODE_SIGNING_ALLOWED=NO >"$app_log" 2>&1; then
+        # Compiler errors sit far above the footer, and a compiler crash prints a stack
+        # dump instead of an `error:` line, so show those before the tail.
+        printf '\n--- diagnostics ---\n' >&2
+        grep -nE '(error|fatal error): |Stack dump|PLEASE submit a bug report|failed \(' \
+            "$app_log" | head -n 200 >&2 || true
+        printf '\n--- last 60 lines ---\n' >&2
+        tail -n 60 "$app_log" >&2
+        fail "app build or tests failed (full log: $REPO_ROOT/$app_log)"
+    fi
     app_summary="$(grep -E 'Executed [0-9]+ tests?' "$app_log" | tail -1 | sed 's/^[[:space:]]*//' || true)"
-    trap 'rm -f "$test_log"' EXIT
-    rm -f "$app_log"
 fi
 
 printf '\n==> Summary\n'

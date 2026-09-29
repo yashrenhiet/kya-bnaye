@@ -10,6 +10,9 @@ struct HistoryEntry: Identifiable, Equatable {
     let recipeName: String
     /// The recipe id (for the artwork).
     let recipeId: String
+    /// The recipe's bundled photo (``KyaCore/Recipe/imageAsset``), or `nil` if it has none
+    /// or was deleted (the artwork then falls back to its gradient).
+    let imageAsset: String?
     /// The meal slot it was cooked for.
     let mealType: MealType
     /// When it was cooked.
@@ -33,6 +36,14 @@ struct HistorySection: Identifiable, Equatable {
     var id: Date { day }
 }
 
+/// A recipe's name and photo path, as needed by ``HistoryEntry``.
+struct RecipeSummary: Equatable {
+    /// The dish name.
+    let name: String
+    /// ``KyaCore/Recipe/imageAsset``.
+    let imageAsset: String?
+}
+
 /// State for History: meal logs grouped by calendar date (in the injected calendar's time
 /// zone), newest first, with dish names resolved from the recipe book.
 @Observable
@@ -51,7 +62,7 @@ final class HistoryStore {
     /// The loading phase.
     private(set) var phase: Phase = .loading
     private(set) var logs: [MealLog] = []
-    private(set) var recipeNames: [String: String] = [:]
+    private(set) var recipeSummaries: [String: RecipeSummary] = [:]
     @ObservationIgnored private var hasLogs = false
     @ObservationIgnored private var hasRecipes = false
 
@@ -86,11 +97,12 @@ final class HistoryStore {
             HistorySection(
                 day: day.day, daysAgo: day.daysAgo,
                 entries: day.logs.map { log in
-                    HistoryEntry(
+                    let summary = recipeSummaries[log.recipeId]
+                    return HistoryEntry(
                         id: log.id,
-                        recipeName: recipeNames[log.recipeId]
-                            ?? String(localized: "A deleted recipe"),
-                        recipeId: log.recipeId, mealType: log.mealType, cookedAt: log.cookedAt,
+                        recipeName: summary?.name ?? String(localized: "A deleted recipe"),
+                        recipeId: log.recipeId, imageAsset: summary?.imageAsset,
+                        mealType: log.mealType, cookedAt: log.cookedAt,
                         timeText: log.cookedAt.formatted(time))
                 },
                 title: Self.title(daysAgo: day.daysAgo, date: day.day.formatted(date)))
@@ -140,7 +152,9 @@ final class HistoryStore {
 
     private func observeRecipes() async throws {
         for try await snapshot in repositories.recipes.watchAll() {
-            recipeNames = Dictionary(snapshot.map { ($0.id, $0.name) }) { _, last in last }
+            recipeSummaries = Dictionary(
+                snapshot.map { ($0.id, RecipeSummary(name: $0.name, imageAsset: $0.imageAsset)) }
+            ) { _, last in last }
             hasRecipes = true
             markLoadedIfReady()
         }

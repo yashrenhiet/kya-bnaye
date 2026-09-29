@@ -30,3 +30,6 @@ coverage/
 *.profraw
 *.profdata
 *.xcresult
+
+# scripts/check.sh keeps the xcodebuild log here
+build-logs/

@@ -64,6 +64,9 @@ struct BackupSummary: Equatable, Sendable {
 enum BackupImportError: Error, Equatable, Sendable {
     /// The file couldn't be opened or read.
     case unreadableFile(detail: String)
+    /// The file is bigger than any real backup could be (``BackupStore/maxFileBytes``), so
+    /// it isn't read at all rather than risk running out of memory.
+    case tooLarge(bytes: Int)
     /// The file isn't a backup this app can read (see ``KyaCore/BackupFormatError``).
     case format(BackupFormatError)
     /// The file parsed, but its rows contradict each other (e.g. a recipe needs an
@@ -75,7 +78,12 @@ enum BackupImportError: Error, Equatable, Sendable {
         switch self {
         case .unreadableFile:
             String(localized: "We couldn't open that file. Check it's downloaded, then try again.")
+        case .tooLarge:
+            String(localized: "That file is far too big to be a kya-bnaye backup.")
         case .format(.notAJSONObject):
+            String(localized: "That file isn't a kya-bnaye backup.")
+        case .format(.unsupportedVersion(let found)) where !Self.isNewerVersion(found):
+            // No version, or one this app never wrote (0, "abc"): some other JSON file.
             String(localized: "That file isn't a kya-bnaye backup.")
         case .format(.unsupportedVersion):
             String(
@@ -91,8 +99,15 @@ enum BackupImportError: Error, Equatable, Sendable {
     var detail: String {
         switch self {
         case .unreadableFile(let detail), .inconsistent(let detail): detail
+        case .tooLarge(let bytes): "file is \(bytes) bytes"
         case .format(let error): error.message
         }
+    }
+
+    /// Whether `found` (the file's `version`, as written) is a whole number above the
+    /// newest version this app reads, i.e. the file really came from a newer app.
+    private static func isNewerVersion(_ found: String) -> Bool {
+        Int(found).map { $0 > BackupCodec.currentVersion } ?? false
     }
 }
 

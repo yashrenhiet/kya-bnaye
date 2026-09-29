@@ -33,6 +33,11 @@ struct ChipLabel: View {
     /// Adds a chevron, for a chip that opens a menu.
     var showsDisclosure = false
 
+    /// Opacity of the off chip's `textSecondary` outline. The off fill (`surface`) barely
+    /// differs from the canvas, so the outline is the chip's edge and must reach 3:1
+    /// against both (WCAG 1.4.11); checked by `ThemeContrastTests`.
+    static let outlineOpacity = 0.7
+
     var body: some View {
         HStack(spacing: Spacing.xSmall) {
             if let symbol = isOn ? "checkmark" : symbolName {
@@ -54,7 +59,9 @@ struct ChipLabel: View {
         .background(Capsule().fill(isOn ? ThemeColor.accent.color : ThemeColor.surface.color))
         .overlay(
             Capsule().strokeBorder(
-                isOn ? ThemeColor.accent.color : ThemeColor.textSecondary.color.opacity(0.4))
+                isOn
+                    ? ThemeColor.accent.color
+                    : ThemeColor.textSecondary.color.opacity(Self.outlineOpacity))
         )
         .contentShape(Capsule())
     }

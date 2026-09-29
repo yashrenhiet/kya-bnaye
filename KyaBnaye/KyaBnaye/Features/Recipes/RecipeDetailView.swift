@@ -84,8 +84,10 @@ private struct RecipeDetailContent: View {
         let cookability = store.cookability(for: recipe)
         ScrollView {
             VStack(alignment: .leading, spacing: Spacing.xLarge) {
-                RecipeArtwork(recipeId: recipe.id, name: recipe.name)
-                    .aspectRatio(16 / 9, contentMode: .fit)
+                RecipeArtwork(
+                    recipeId: recipe.id, name: recipe.name, imageAsset: recipe.imageAsset
+                )
+                .aspectRatio(16 / 9, contentMode: .fit)
                 RecipeHeader(
                     recipe: recipe, cookability: cookability,
                     daysSinceCooked: store.daysSinceLastCooked(recipe.id))

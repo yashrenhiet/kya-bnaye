@@ -48,6 +48,7 @@ final class PantryStore {
     @ObservationIgnored private var normalizer: IngredientNormalizer?
     @ObservationIgnored private var hasCatalog = false
     @ObservationIgnored private var hasStock = false
+    @ObservationIgnored private let writes = SerialWriteQueue()
 
     @ObservationIgnored private let ingredients: any IngredientRepository
     @ObservationIgnored private let pantry: any PantryRepository
@@ -146,10 +147,17 @@ final class PantryStore {
 
     // MARK: Actions
 
-    /// Moves a row to its next level (Plenty → Low → Out → Plenty).
+    // Every write goes through `writes`, so a quick double tap runs the second action
+    // against the state the first one left, never against the same stale snapshot.
+
+    /// Moves a row to its next level (Plenty → Low → Out → Plenty), counting from the level
+    /// stored now rather than the one the row showed when it was tapped.
     func cycle(_ row: PantryRow) async {
-        let level = PantryRules.nextLevel(after: row.item?.level)
-        await write(item(for: row.ingredient, level: level, expiry: .automatic), name: row)
+        await writes.run {
+            let level = PantryRules.nextLevel(after: self.itemsById[row.id]?.level)
+            let item = self.item(for: row.ingredient, level: level, expiry: .automatic)
+            _ = await self.write(item, name: row)
+        }
     }
 
     /// Marks a catalog ingredient as Plenty (freshly bought) and clears the search.
@@ -157,31 +165,20 @@ final class PantryStore {
     /// - Returns: Whether it was saved.
     @discardableResult
     func add(_ ingredient: Ingredient) async -> Bool {
-        let item = PantryItem(ingredientId: ingredient.id, level: .plenty, updatedAt: now())
-            .withEstimatedExpiry(shelfLifeDays: ingredient.shelfLifeDays, calendar: calendar())
-        guard await write(item, name: row(for: ingredient)) else { return false }
-        query = ""
-        confirmation = String(localized: "\(ingredient.name) marked Plenty")
-        return true
+        await writes.run { await self.markPlenty(ingredient) }
     }
 
-    /// Creates a user ingredient for text that matched nothing, then adds it as Plenty.
+    /// Adds typed text that matched nothing as a user ingredient, then marks it Plenty.
+    ///
+    /// If the text (possibly edited in the sheet) turns out to be the name or alias of an
+    /// ingredient already in the catalog, that ingredient is used instead: saving a second
+    /// ingredient with the same name would make every later catalog read fail.
     ///
     /// - Returns: Whether it was saved.
     @discardableResult
     func createAndAdd(name: String, category: IngredientCategory, buyFrom: BuyFrom) async -> Bool {
-        do {
-            let ingredient = try IngredientNormalizer.createUserIngredient(
-                name, category: category, buyFrom: buyFrom)
-            if let existing = normalizer?.ingredient(withId: ingredient.id) {
-                return await add(existing)
-            }
-            try await ingredients.upsert([ingredient])
-            try apply(catalog: Array(ingredientsById.values) + [ingredient])
-            return await add(ingredient)
-        } catch {
-            actionError = String(localized: "Couldn't add \(name). Please try again.")
-            return false
+        await writes.run {
+            await self.createAndMarkPlenty(name: name, category: category, buyFrom: buyFrom)
         }
     }
 
@@ -190,7 +187,10 @@ final class PantryStore {
     /// - Returns: Whether it was saved.
     @discardableResult
     func save(_ row: PantryRow, level: StockLevel, expiry: ExpiryChoice) async -> Bool {
-        await write(item(for: row.ingredient, level: level, expiry: expiry), name: row)
+        await writes.run {
+            await self.write(
+                self.item(for: row.ingredient, level: level, expiry: expiry), name: row)
+        }
     }
 
     /// Removes an ingredient from the pantry entirely (not the same as Out: it will not be
@@ -199,21 +199,59 @@ final class PantryStore {
     /// - Returns: Whether it was removed.
     @discardableResult
     func remove(_ row: PantryRow) async -> Bool {
-        do {
-            try await pantry.delete(ingredientIds: [row.id])
-            itemsById[row.id] = nil
-            confirmation = String(localized: "\(row.ingredient.name) removed from pantry")
-            return true
-        } catch {
-            actionError = String(
-                localized: "Couldn't remove \(row.ingredient.name). Please try again.")
-            return false
+        await writes.run {
+            do {
+                try await self.pantry.delete(ingredientIds: [row.id])
+                self.itemsById[row.id] = nil
+                self.confirmation = String(
+                    localized: "\(row.ingredient.name) removed from pantry")
+                return true
+            } catch {
+                self.actionError = String(
+                    localized: "Couldn't remove \(row.ingredient.name). Please try again.")
+                return false
+            }
         }
     }
 
     /// Puts an ingredient on the shopping list, with Low/Out as the reason, unless it is
     /// already there and not ticked off.
     func addToShoppingList(_ row: PantryRow) async {
+        await writes.run { await self.addToShoppingListNow(row) }
+    }
+
+    // MARK: Private
+
+    private func markPlenty(_ ingredient: Ingredient) async -> Bool {
+        let item = PantryItem(ingredientId: ingredient.id, level: .plenty, updatedAt: now())
+            .withEstimatedExpiry(shelfLifeDays: ingredient.shelfLifeDays, calendar: calendar())
+        guard await write(item, name: row(for: ingredient)) else { return false }
+        query = ""
+        confirmation = String(localized: "\(ingredient.name) marked Plenty")
+        return true
+    }
+
+    private func createAndMarkPlenty(
+        name: String, category: IngredientCategory, buyFrom: BuyFrom
+    ) async -> Bool {
+        do {
+            if let existing = normalizer?.find(name) { return await markPlenty(existing) }
+            let ingredient = try IngredientNormalizer.createUserIngredient(
+                name, category: category, buyFrom: buyFrom)
+            if let existing = normalizer?.ingredient(withId: ingredient.id) {
+                return await markPlenty(existing)
+            }
+            let catalog = Array(ingredientsById.values) + [ingredient]
+            try await ingredients.upsert([ingredient])
+            try apply(catalog: catalog)
+            return await markPlenty(ingredient)
+        } catch {
+            actionError = String(localized: "Couldn't add \(name). Please try again.")
+            return false
+        }
+    }
+
+    private func addToShoppingListNow(_ row: PantryRow) async {
         let name = row.ingredient.name
         do {
             let list = try await shopping.all()
@@ -222,7 +260,7 @@ final class PantryStore {
                 return
             }
             let reason: ShoppingReason =
-                switch row.effectiveLevel {
+                switch itemsById[row.id]?.level ?? row.effectiveLevel {
                 case .out: .out
                 case .low: .low
                 case .plenty: .manual
@@ -237,8 +275,6 @@ final class PantryStore {
                 localized: "Couldn't add \(name) to the shopping list. Please try again.")
         }
     }
-
-    // MARK: Private
 
     private func observeCatalog() async throws {
         for try await snapshot in ingredients.watchAll() {

@@ -36,8 +36,11 @@ struct HiddenRecipesView: View {
 
     private func row(_ recipe: Recipe) -> some View {
         AdaptiveStack { isStacked in
-            RecipeArtwork(recipeId: recipe.id, name: recipe.name, cornerRadius: Radius.small)
-                .frame(width: Metrics.minimumTapTarget, height: Metrics.minimumTapTarget)
+            RecipeArtwork(
+                recipeId: recipe.id, name: recipe.name, imageAsset: recipe.imageAsset,
+                cornerRadius: Radius.small
+            )
+            .frame(width: Metrics.minimumTapTarget, height: Metrics.minimumTapTarget)
             Text(recipe.name)
                 .font(Typography.body)
                 .foregroundStyle(ThemeColor.textPrimary.color)

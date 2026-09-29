@@ -47,6 +47,40 @@ struct ThemeContrastTests {
         #expect(abs(WCAG.contrastRatio(.white, .white) - 1) < 0.001)
     }
 
+    static let canvases: [ThemeColor] = [.background, .surface]
+
+    @Test(
+        "An off chip's outline reaches 3:1 on its fill and the canvas", arguments: canvases, styles)
+    @MainActor
+    func chipOutline(_ canvas: ThemeColor, style: UIUserInterfaceStyle) throws {
+        let under = try resolved(canvas, style)
+        let outline = WCAG.over(
+            try resolved(.textSecondary, style), alpha: ChipLabel.outlineOpacity, under)
+        let ratio = WCAG.contrastRatio(outline, under)
+        #expect(ratio >= 3, "chip outline on \(canvas.rawValue) is \(ratio):1")
+    }
+
+    @Test("A pressed primary button keeps its label at 4.5:1", arguments: canvases, styles)
+    @MainActor
+    func pressedPrimary(_ canvas: ThemeColor, style: UIUserInterfaceStyle) throws {
+        let under = try resolved(canvas, style)
+        let alpha = PrimaryButtonStyle.pressedOpacity
+        let label = WCAG.over(try resolved(.onAccent, style), alpha: alpha, under)
+        let fill = WCAG.over(try resolved(.accent, style), alpha: alpha, under)
+        let ratio = WCAG.contrastRatio(label, fill)
+        #expect(ratio >= 4.5, "pressed primary on \(canvas.rawValue) is \(ratio):1")
+    }
+
+    @Test(
+        "An accent-tinted bordered button's label reaches 4.5:1 on its tinted fill",
+        arguments: canvases, styles)
+    func borderedAccent(_ canvas: ThemeColor, style: UIUserInterfaceStyle) throws {
+        let accent = try resolved(.accent, style)
+        let fill = WCAG.over(accent, alpha: 0.2, try resolved(canvas, style))
+        let ratio = WCAG.contrastRatio(accent, fill)
+        #expect(ratio >= 4.5, "bordered accent on \(canvas.rawValue) is \(ratio):1")
+    }
+
     private func resolved(_ token: ThemeColor, _ style: UIUserInterfaceStyle) throws -> UIColor {
         let color = try #require(UIColor(named: token.rawValue, in: .main, compatibleWith: nil))
         return color.resolvedColor(with: UITraitCollection(userInterfaceStyle: style))
@@ -59,6 +93,24 @@ private enum WCAG {
         let lighter = max(luminance(first), luminance(second))
         let darker = min(luminance(first), luminance(second))
         return (lighter + 0.05) / (darker + 0.05)
+    }
+
+    /// `color` drawn at `alpha` over the opaque `background` (sRGB source-over).
+    static func over(_ color: UIColor, alpha: Double, _ background: UIColor) -> UIColor {
+        let top = components(color)
+        let bottom = components(background)
+        let mix = { (index: Int) in CGFloat(alpha) * top[index] + CGFloat(1 - alpha) * bottom[index]
+        }
+        return UIColor(red: mix(0), green: mix(1), blue: mix(2), alpha: 1)
+    }
+
+    private static func components(_ color: UIColor) -> [CGFloat] {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return [red, green, blue]
     }
 
     private static func luminance(_ color: UIColor) -> Double {

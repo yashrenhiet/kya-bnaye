@@ -36,6 +36,10 @@ struct PendingRestore: Identifiable, Sendable {
 @Observable
 @MainActor
 final class BackupStore {
+    /// The largest file import will read: 50 MB. Years of daily swiping come to a few MB,
+    /// so anything bigger is the wrong file, and reading it whole could exhaust memory.
+    static let maxFileBytes = 50 * 1024 * 1024
+
     /// Whether work is in flight, so buttons can show progress and not double-fire.
     private(set) var isWorking = false
     /// The backup ready to share or save; the view presents it while non-`nil`.
@@ -108,12 +112,12 @@ final class BackupStore {
         }
     }
 
-    /// Reports the result of saving the file to Files.
+    /// Reports the result of saving the file to Files. Cancelling is not a failure.
     ///
-    /// - Parameter error: Why saving failed, or `nil` when it was saved or cancelled.
+    /// - Parameter error: Why saving failed, or `nil` when it was saved.
     func exportFinished(error: (any Error)?) {
         preparedBackup = nil
-        if let error {
+        if let error, !Self.isCancellation(error) {
             failure = BackupFailure(
                 message: String(localized: "The backup wasn't saved. Please try again."),
                 detail: String(describing: error))
@@ -123,23 +127,27 @@ final class BackupStore {
     // MARK: Import
 
     /// Reads and checks a file picked in Files, then asks for confirmation via
-    /// ``pendingRestore``. Nothing is written yet.
+    /// ``pendingRestore``. Nothing is written yet. A file over ``maxFileBytes`` is refused
+    /// without being read.
     ///
-    /// - Parameter url: The picked file (security-scoped).
-    func readBackup(at url: URL) async {
+    /// - Parameters:
+    ///   - url: The picked file (security-scoped).
+    ///   - maxBytes: The size limit; ``maxFileBytes`` unless a test lowers it.
+    func readBackup(at url: URL, maxBytes: Int = BackupStore.maxFileBytes) async {
         guard !isWorking else { return }
         isWorking = true
         defer { isWorking = false }
         do {
-            let data = try await Self.read(url)
+            let data = try await Self.read(url, maxBytes: maxBytes)
             try stageRestore(of: data)
         } catch {
             fail(error)
         }
     }
 
-    /// Reports that the file picker itself failed.
+    /// Reports that the file picker itself failed. Cancelling is not a failure.
     func importPickerFailed(_ error: any Error) {
+        guard !Self.isCancellation(error) else { return }
         fail(.unreadableFile(detail: String(describing: error)))
     }
 
@@ -216,15 +224,27 @@ final class BackupStore {
         failure = BackupFailure(message: error.userMessage, detail: error.detail)
     }
 
+    /// Whether `error` only says the user closed a system file sheet.
+    private static func isCancellation(_ error: any Error) -> Bool {
+        (error as? CocoaError)?.code == .userCancelled
+    }
+
     @concurrent
     private static func write(_ data: Data, to url: URL) async throws {
         try data.write(to: url, options: .atomic)
     }
 
     @concurrent
-    private static func read(_ url: URL) async throws(BackupImportError) -> Data {
+    private static func read(_ url: URL, maxBytes: Int) async throws(BackupImportError) -> Data {
         let isScoped = url.startAccessingSecurityScopedResource()
         defer { if isScoped { url.stopAccessingSecurityScopedResource() } }
+        let size: Int
+        do {
+            size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+        } catch {
+            throw .unreadableFile(detail: String(describing: error))
+        }
+        guard size <= maxBytes else { throw .tooLarge(bytes: size) }
         do {
             return try Data(contentsOf: url)
         } catch {

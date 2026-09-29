@@ -48,6 +48,9 @@ final class ShoppingStore {
     @ObservationIgnored private var pantry: [PantryItem] = []
     @ObservationIgnored private var isFilling = false
     @ObservationIgnored private var needsRefill = false
+    /// Display names of manual adds whose write is still in flight, keyed like ``addKey``,
+    /// so a double-submit can't slip a second row past the duplicate check.
+    @ObservationIgnored private var pendingAdds: [String: String] = [:]
     private var catalog: [Ingredient] = []
     private var recipeNamesById: [String: String] = [:]
 
@@ -162,6 +165,8 @@ final class ShoppingStore {
         }) {
             return .alreadyListed(name: presenter.name(of: existing))
         }
+        let pendingKey = Self.addKey(ingredient: ingredient, key: key)
+        if let name = pendingAdds[pendingKey] { return .alreadyListed(name: name) }
         let item: ShoppingItem
         do {
             item = try ShoppingItem(
@@ -172,13 +177,16 @@ final class ShoppingStore {
         } catch {
             return .blank
         }
+        let name = presenter.name(of: item)
+        pendingAdds[pendingKey] = name
+        defer { pendingAdds[pendingKey] = nil }
         do {
             try await repositories.shopping.upsert([item])
             items = try await repositories.shopping.all()
         } catch {
             return .failed(message: String(localized: "Couldn't add that item. Please try again."))
         }
-        return .added(name: presenter.name(of: item))
+        return .added(name: name)
     }
 
     /// Adds a catalog ingredient picked from the suggestions.
@@ -212,6 +220,11 @@ final class ShoppingStore {
 
     private static func names(_ recipes: [Recipe]) -> [String: String] {
         Dictionary(recipes.map { ($0.id, $0.name) }) { _, last in last }
+    }
+
+    /// One key per thing a manual add can create: the catalog id, else the typed-name key.
+    private static func addKey(ingredient: Ingredient?, key: String) -> String {
+        ingredient.map { "ingredient:\($0.id)" } ?? "custom:\(key)"
     }
 
     private static func matches(_ item: ShoppingItem, ingredient: Ingredient?, key: String) -> Bool

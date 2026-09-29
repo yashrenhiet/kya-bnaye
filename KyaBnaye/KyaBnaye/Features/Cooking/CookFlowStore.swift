@@ -150,7 +150,7 @@ final class CookFlowStore {
         phase = .idle
         candidates = []
         choices = [:]
-        // A confirm failure sets `errorMessage` but leaves the sheet open (line 138); once
+        // A confirm failure sets `errorMessage` but leaves the sheet open (`confirm()`); once
         // the user retries successfully, or skips instead, the stale failure must not
         // reappear as an alert once the sheet closes (`CookFlowViews.swift`'s alert binding
         // fires whenever `errorMessage != nil && !isAskingUsedUp`).

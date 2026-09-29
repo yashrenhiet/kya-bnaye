@@ -160,9 +160,12 @@ struct RecipeRowView: View {
 
     var body: some View {
         AdaptiveStack { isStacked in
-            RecipeArtwork(recipeId: row.id, name: row.recipe.name, cornerRadius: Radius.small)
-                .frame(width: Metrics.minimumTapTarget + Spacing.medium)
-                .frame(height: Metrics.minimumTapTarget + Spacing.medium)
+            RecipeArtwork(
+                recipeId: row.id, name: row.recipe.name, imageAsset: row.recipe.imageAsset,
+                cornerRadius: Radius.small
+            )
+            .frame(width: Metrics.minimumTapTarget + Spacing.medium)
+            .frame(height: Metrics.minimumTapTarget + Spacing.medium)
             VStack(alignment: .leading, spacing: Spacing.xSmall) {
                 HStack(spacing: Spacing.xSmall) {
                     Text(row.recipe.name)
