@@ -14,6 +14,21 @@ final class AccessibilityAuditUITests: XCTestCase {
         continueAfterFailure = true
     }
 
+    /// Polls until `element` is hittable (exists, on screen, not obstructed), not merely
+    /// `exists`. Running the audit right after a push/tab transition can snapshot a frame
+    /// mid-animation, which produced a one-off flaky contrast/clipping report (confirmed
+    /// non-reproducing on a clean re-run) — waiting for a settled, hittable element first
+    /// avoids photographing a layout that is still moving.
+    @MainActor
+    private func waitUntilHittable(_ element: XCUIElement, timeout: TimeInterval = 10) -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+        while Date() < deadline {
+            if element.exists && element.isHittable { return true }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+        }
+        return element.exists && element.isHittable
+    }
+
     @MainActor
     func testTabScreensPassAudit() throws {
         let app = XCUIApplication.launchFresh()
@@ -49,12 +64,14 @@ final class AccessibilityAuditUITests: XCTestCase {
 
         homeBar.buttons["History"].tap()
         XCTAssertTrue(app.navigationBars["History"].waitForExistence(timeout: timeout))
+        XCTAssertTrue(waitUntilHittable(app.navigationBars["History"]))
         try audit(app, screen: "History")
         app.navigationBars["History"].buttons.firstMatch.tap()
 
         XCTAssertTrue(homeBar.waitForExistence(timeout: timeout))
         homeBar.buttons["Settings"].tap()
         XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: timeout))
+        XCTAssertTrue(waitUntilHittable(app.navigationBars["Settings"]))
         try audit(app, screen: "Settings")
     }
 
@@ -66,6 +83,7 @@ final class AccessibilityAuditUITests: XCTestCase {
         try audit(app, screen: "Onboarding welcome")
         next.tap()
         XCTAssertTrue(app.buttons["onboarding.next"].waitForExistence(timeout: timeout))
+        XCTAssertTrue(waitUntilHittable(app.buttons["onboarding.next"]))
         try audit(app, screen: "Onboarding staples")
     }
 

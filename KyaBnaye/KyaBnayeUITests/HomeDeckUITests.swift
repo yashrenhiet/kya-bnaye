@@ -96,7 +96,9 @@ final class HomeDeckUITests: XCTestCase {
 
     @MainActor
     private func scrollTo(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
-        for _ in 0..<5 {
+        // 10, not 5: a shorter screen (e.g. iPhone SE) shows fewer rows per swipe, so a
+        // count tuned for a tall device can run out before reaching a row near the bottom.
+        for _ in 0..<10 {
             if element.waitForExistence(timeout: 2) && element.isHittable { return true }
             app.swipeUp()
         }
