@@ -147,7 +147,14 @@ print(phones[0][2] if phones else "")
     # Kept (not a temp file) so a failure can be read in full afterwards.
     mkdir -p build-logs
     app_log="build-logs/xcodebuild-app.log"
+    # -retry-tests-on-failure: GitHub's macOS runners have proven measurably slower and
+    # occasionally flaky under load (a UI-test timing assertion or an on-device
+    # accessibility-audit snapshot taken mid-transition, observed 2026-09-29) in ways that
+    # don't reproduce locally. This retries only the tests that actually failed, up to
+    # Xcode's default attempt count — a test that is genuinely broken still fails every
+    # attempt and still fails the gate; only transient flakes get absorbed.
     if ! xcodebuild -project "$APP_PROJECT" -scheme KyaBnaye -destination "$APP_DESTINATION" \
+        -retry-tests-on-failure \
         build test CODE_SIGNING_ALLOWED=NO >"$app_log" 2>&1; then
         # Compiler errors sit far above the footer, and a compiler crash prints a stack
         # dump instead of an `error:` line, so show those before the tail.

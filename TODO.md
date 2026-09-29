@@ -41,9 +41,20 @@
   accessibility audit flaked from a mid-transition snapshot. Fixed (`4f3d2e8`) — bumped
   the swipe budget, added a settle-wait before flake-prone audits. Verified 4/4 on a
   locally-built iPhone SE 3 simulator, twice.
-- [ ] **Watch the next 1-2 CI runs to confirm actual stability**, not just my local
-  repro — I don't control which simulator GitHub's image will offer next, and that's a
-  standing risk (see Risks §7), not a one-time fix.
+- [x] **Third real run failed too, on two *different* assertions than the second run**
+  (Settings audit again, and a different `scrollTo` target in the same critical-path
+  test), and the whole suite took ~668s on GitHub's runner vs ~440s locally (~1.5x
+  slower). That pattern — a different random failure each run, plus measurably slower
+  hardware — means this is CI-hardware timing flakiness, not one more bug to chase
+  test-by-test. Added `-retry-tests-on-failure` to `scripts/check.sh`'s `xcodebuild`
+  invocation (Xcode's built-in mechanism, defaults to 3 attempts, only retries tests that
+  actually failed — a test broken 100% of the time still fails the gate).
+- [ ] **Watch the next few CI runs to confirm the retry flag actually stabilizes things.**
+  I could not iterate on GitHub's real hardware fast enough this session to prove it
+  fully converges — this is the most defensible general fix given the evidence, not a
+  guarantee. If it keeps flaking even with retries, the next step is raising the fixed
+  `timeout: TimeInterval = 10` constants in the affected UI test files, since the runner
+  is measurably slower than local.
 - [ ] **Pin `actions/checkout` to a commit SHA** instead of `@v4` — deferred earlier for
   lack of network access to look up the SHA.
 - [ ] Consider uploading `build-logs/xcodebuild-app.log` as a GitHub Actions artifact on
